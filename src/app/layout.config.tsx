@@ -22,12 +22,6 @@ export const linkItems: LinkItemType[] = [
     active: 'url',
   },
   {
-    icon: <Icons.phone />,
-    text: 'Contact',
-    url: '/contact',
-    active: 'url',
-  },
-  {
     type: 'menu',
     text: 'Blog',
     items: [
@@ -42,12 +36,6 @@ export const linkItems: LinkItemType[] = [
         description: 'View blog posts by tags',
         url: '/tags',
         icon: <Icons.tags />,
-      },
-      {
-        text: 'Newsletter',
-        description: 'Subscribe to our newsletter',
-        url: '/newsletter',
-        icon: <Icons.mail />,
       },
     ],
   },

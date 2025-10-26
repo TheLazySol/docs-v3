@@ -1,5 +1,4 @@
 import {
-  PostComments,
   Share,
 } from '@/app/(home)/(blog)/blog/[slug]/page.client';
 import { PostJsonLd } from '@/components/json-ld';
@@ -81,10 +80,6 @@ export default async function Page(props: {
                 }}
               />
             </div>
-            <PostComments
-              slug={params.slug}
-              className='[&_form>div]:!rounded-none rounded-none border-0 border-border border-t border-dashed'
-            />
           </div>
           <div className='flex flex-col gap-4 p-4 text-sm lg:sticky lg:top-[4rem] lg:h-[calc(100vh-4rem)] lg:w-[250px] lg:self-start lg:overflow-y-auto lg:border-border lg:border-l lg:border-dashed'>
             <div>

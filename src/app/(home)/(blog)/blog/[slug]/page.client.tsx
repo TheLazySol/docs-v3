@@ -6,7 +6,6 @@ import {
 import { Icons } from '@/components/icons/icons';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Comments } from '@fuma-comment/react';
 import { useRef } from 'react';
 import { toast } from 'sonner';
 import { useCopyToClipboard } from 'usehooks-ts';
@@ -37,16 +36,3 @@ export function Share({ url }: { url: string }): React.ReactElement {
   );
 }
 
-export function PostComments({
-  slug,
-  className,
-}: { slug: string; className?: string }) {
-  // Comments disabled for now - no auth system
-  return (
-    <div className={cn('w-full', className)}>
-      <p className="text-muted-foreground text-sm">
-        Comments are temporarily disabled.
-      </p>
-    </div>
-  );
-}
