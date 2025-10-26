@@ -1,10 +1,6 @@
 {
   "title": "Documentation",
   "pages": [
-    "index",
-    "getting-started",
-    "trading-guide",
-    "risk-management",
-    "api"
+    "index"
   ]
 }

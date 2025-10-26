@@ -21,6 +21,7 @@ export const linkItems: LinkItemType[] = [
     active: 'url',
   },
   {
+    icon: <Icons.page />,
     text: 'Docs',
     url: '/docs',
     active: 'url',
@@ -28,6 +29,8 @@ export const linkItems: LinkItemType[] = [
   {
     type: 'menu',
     text: 'Blog',
+    icon: <Icons.posts />,
+    on: 'all',
     items: [
       {
         text: 'Posts',
@@ -78,6 +81,7 @@ export const docsLinkItems: LinkItemType[] = [
     active: 'url',
   },
   {
+    icon: <Icons.page />,
     text: 'Docs',
     url: '/docs',
     active: 'url',
@@ -85,6 +89,8 @@ export const docsLinkItems: LinkItemType[] = [
   {
     type: 'menu',
     text: 'Blog',
+    icon: <Icons.posts />,
+    on: 'all',
     items: [
       {
         text: 'Posts',

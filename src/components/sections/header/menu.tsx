@@ -44,23 +44,17 @@ export const MenuLinkItem = ({
 
   if (item.type === 'menu') {
     const header = (
-      <>
+      <div className="mobile-menu-item">
         {item.icon}
         {item.text}
-      </>
+      </div>
     );
 
     return (
       <div className={cn('mb-4 flex flex-col', props.className)}>
-        <p className='mb-1 text-fd-muted-foreground text-sm'>
-          {item.url ? (
-            <NavigationMenuLink asChild>
-              <Link href={item.url}>{header}</Link>
-            </NavigationMenuLink>
-          ) : (
-            header
-          )}
-        </p>
+        <div className='mb-1 text-foreground text-base font-medium'>
+          {header}
+        </div>
         {item.items.map((child, i) => (
           <MenuLinkItem key={i.toString()} item={child} />
         ))}
