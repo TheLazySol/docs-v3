@@ -7,7 +7,7 @@ import { MailIcon } from 'lucide-react';
 import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import Link from 'next/link';
-import heroImage from '../../../../public/images/gradient-noise-purple-azure-light.png';
+import heroImage from '../../../../public/images/WebPageBackground.png';
 
 const Hero = ({ posts }: { posts: Page[] }) => (
   <Section className='relative w-full overflow-hidden bg-dashed px-4 py-16 sm:px-16 sm:py-24 md:py-32'>
@@ -25,9 +25,8 @@ const Hero = ({ posts }: { posts: Page[] }) => (
       <Image
         src={heroImage}
         alt='Hero Background'
-        height={600}
-        width={704}
-        className='pointer-events-none absolute right-0 bottom-0 h-[900px] w-[1004px] max-w-[1004px] translate-x-1/2 translate-y-1/2 select-none opacity-80 dark:opacity-100'
+        fill
+        className='pointer-events-none select-none object-cover opacity-80 dark:opacity-100'
         priority
       />
     </motion.div>
@@ -39,20 +38,18 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         asChild
       >
         <Link href={`/blog/${posts?.[0]?.slugs?.join('/')}`}>
-          Read our latest announcement
+          Latest DAO Proposal
           <Icons.arrowUpRight className='group-hover:-rotate-12 size-4 transition-transform' />
         </Link>
       </Button>
       <div className='flex flex-col gap-4'>
         <h1 className='max-w-2xl text-center font-regular text-5xl tracking-tighter md:text-7xl'>
-          Decentralized Options
+          Pioneering DeFi
           <br />
-          Trading on Solana
+          Options on Solana
         </h1>
         <p className='max-w-2xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
-          Building the infrastructure for the next generation of DeFi options.
-          Open-source tools, standards, and SDKs for creating, executing, and
-          managing option contracts on Solana.
+          Providing the framework to bring on-chain options trading natively to Solana.
         </p>
       </div>
       <div className='flex flex-row gap-3'>
@@ -63,13 +60,13 @@ const Hero = ({ posts }: { posts: Page[] }) => (
           asChild
         >
           <Link href='/contact'>
-            Get in touch{' '}
-            <MailIcon className='group-hover:-rotate-12 size-4 transition-transform' />
+            Discord{' '}
+            <Icons.discord className='group-hover:-rotate-12 size-4 transition-transform' />
           </Link>
         </Button>
         <Button size='lg' className='group gap-4' asChild>
           <Link href={env.NEXT_PUBLIC_APP_URL || '/contact'}>
-            Sign up{' '}
+            Trade Options{' '}
             <Icons.arrowUpRight className='group-hover:-rotate-12 size-4 transition-transform' />
           </Link>
         </Button>
