@@ -11,7 +11,6 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title,
   },
-  githubUrl: 'https://github.com/EpicentralLabs',
 };
 
 export const linkItems: LinkItemType[] = [
@@ -67,6 +66,39 @@ export const linkItems: LinkItemType[] = [
     icon: <Icons.discord />,
     label: 'Discord',
     secondary: true,
+  },
+];
+
+// Docs-specific links without social icons
+export const docsLinkItems: LinkItemType[] = [
+  {
+    icon: <Icons.info />,
+    text: 'About',
+    url: '/about',
+    active: 'url',
+  },
+  {
+    text: 'Docs',
+    url: '/docs',
+    active: 'url',
+  },
+  {
+    type: 'menu',
+    text: 'Blog',
+    items: [
+      {
+        text: 'Posts',
+        description: 'View all blog posts',
+        url: '/blog',
+        icon: <Icons.posts />,
+      },
+      {
+        text: 'Tags',
+        description: 'View blog posts by tags',
+        url: '/tags',
+        icon: <Icons.tags />,
+      },
+    ],
   },
 ];
 

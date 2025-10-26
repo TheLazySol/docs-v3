@@ -12,7 +12,7 @@ import { ActiveLink } from '../active-link';
 import { ThemeToggle } from '../theme-toggle';
 
 export function Footer() {
-  const links = getLinks(linkItems, baseOptions.githubUrl);
+  const links = getLinks(linkItems);
   const navItems = links.filter((item) =>
     ['nav', 'all'].includes(item.on ?? 'all'),
   );

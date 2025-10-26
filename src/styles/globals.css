@@ -160,6 +160,32 @@
 }
 
 @layer components {
+  /* Sidebar navigation styling */
+  .sidebar-nav-item {
+    @apply rounded-sm border border-dashed border-border/50;
+  }
+  
+  .sidebar-nav-item:hover {
+    @apply border-border;
+  }
+  
+  .sidebar-nav-item[data-active="true"] {
+    @apply border-primary/50;
+  }
+
+  /* Override fumadocs sidebar item styling */
+  #nd-sidebar a[data-active] {
+    @apply rounded-sm border border-dashed border-border/50;
+  }
+  
+  #nd-sidebar a[data-active]:hover {
+    @apply border-border;
+  }
+  
+  #nd-sidebar a[data-active="true"] {
+    @apply border-primary/50;
+  }
+
   .footer {
     --footer-text-size: clamp(3rem, 14rem, 14vw);
 

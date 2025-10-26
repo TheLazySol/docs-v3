@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       nav={{
         component: (
           <Header
-            finalLinks={getLinks(linkItems, baseOptions.githubUrl)}
+            finalLinks={getLinks(linkItems)}
             {...baseOptions}
           />
         ),
