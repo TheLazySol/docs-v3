@@ -2,8 +2,8 @@ import { transformerRemoveNotationEscape } from '@shikijs/transformers';
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
 import {
   defineCollections,
-  defineDocs,
   defineConfig,
+  defineDocs,
   frontmatterSchema,
 } from 'fumadocs-mdx/config';
 import { transformerTwoslash } from 'fumadocs-twoslash';
@@ -34,7 +34,6 @@ export const blog = defineCollections({
     image: z.string().optional(),
   }),
 });
-
 
 export const docs = defineDocs({
   dir: 'content/docs',

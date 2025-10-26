@@ -1,7 +1,6 @@
 'use client';
 
 import { cva } from 'class-variance-authority';
-import Link from 'fumadocs-core/link';
 import { cn } from 'fumadocs-ui/components/api';
 import { buttonVariants } from 'fumadocs-ui/components/ui/button';
 import {
@@ -44,7 +43,7 @@ export const MenuLinkItem = ({
 
   if (item.type === 'menu') {
     const header = (
-      <div className="mobile-menu-item">
+      <div className='mobile-menu-item'>
         {item.icon}
         {item.text}
       </div>
@@ -52,7 +51,7 @@ export const MenuLinkItem = ({
 
     return (
       <div className={cn('mb-4 flex flex-col', props.className)}>
-        <div className='mb-1 text-foreground text-base font-medium'>
+        <div className='mb-1 font-medium text-base text-foreground'>
           {header}
         </div>
         {item.items.map((child, i) => (

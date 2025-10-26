@@ -1,9 +1,13 @@
-import { getDoc, type DocsPage as DocsPageType } from '@/lib/source';
-import { DocsPage, DocsDescription, DocsTitle, DocsBody } from 'fumadocs-ui/page';
-import { notFound } from 'next/navigation';
-import type { ReactNode } from 'react';
-import { ExternalLink } from 'lucide-react';
 import { githubConfig } from '@/lib/github-config';
+import { type DocsPage as DocsPageType, getDoc } from '@/lib/source';
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+} from 'fumadocs-ui/page';
+import { ExternalLink } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 interface DocsPageProps {
   slug: string[];
@@ -11,14 +15,14 @@ interface DocsPageProps {
 
 export default function DocsPageComponent({ slug }: DocsPageProps) {
   const page: DocsPageType | undefined = getDoc(slug);
-  
+
   if (!page) {
     notFound();
   }
 
   // Extract data consistently - handle both toc and headings properties
   const { body: MDX, toc, headings, lastModified } = page.data as any;
-  
+
   // Use toc if available, otherwise fall back to headings
   const tableOfContents = toc || headings || [];
 
@@ -27,29 +31,29 @@ export default function DocsPageComponent({ slug }: DocsPageProps) {
   const githubEditUrl = githubConfig.getEditUrl(filePath);
 
   return (
-    <DocsPage 
+    <DocsPage
       toc={tableOfContents}
       tableOfContent={{
         style: 'clerk',
         footer: (
-          <div className="mt-4 pt-4 border-t border-border/40 space-y-3">
-                         {lastModified && (
-               <div>
-                 <p className="text-xs text-muted-foreground">
-                   <span className="font-medium">Last updated:</span>{' '}
-                   {githubConfig.formatDate(new Date(lastModified))}
-                 </p>
-               </div>
-             )}
+          <div className='mt-4 space-y-3 border-border/40 border-t pt-4'>
+            {lastModified && (
+              <div>
+                <p className='text-muted-foreground text-xs'>
+                  <span className='font-medium'>Last updated:</span>{' '}
+                  {githubConfig.formatDate(new Date(lastModified))}
+                </p>
+              </div>
+            )}
             <div>
-              <a 
-                href={githubEditUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-xs text-primary hover:underline flex items-center gap-1.5 group"
+              <a
+                href={githubEditUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group flex items-center gap-1.5 text-primary text-xs hover:underline'
               >
                 <span>Edit this page</span>
-                <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ExternalLink className='group-hover:-translate-y-0.5 h-3 w-3 transition-transform group-hover:translate-x-0.5' />
               </a>
             </div>
           </div>

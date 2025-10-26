@@ -89,6 +89,9 @@ importers:
       fumadocs-ui:
         specifier: ^15.2.0
         version: 15.2.0(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(next@15.2.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@4.0.4)
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
       katex:
         specifier: 0.16.21
         version: 0.16.21
@@ -180,6 +183,9 @@ importers:
       '@types/rss':
         specifier: ^0.0.32
         version: 0.0.32
+      '@types/three':
+        specifier: ^0.180.0
+        version: 0.180.0
       fast-glob:
         specifier: ^3.3.3
         version: 3.3.3
@@ -2590,6 +2596,9 @@ packages:
   gray-matter@4.0.3:
     resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
     engines: {node: '>=6.0'}
+
+  gsap@3.13.0:
+    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==}
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -6021,6 +6030,8 @@ snapshots:
       kind-of: 6.0.3
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
+
+  gsap@3.13.0: {}
 
   has-flag@4.0.0: {}
 

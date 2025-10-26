@@ -1,6 +1,6 @@
 import { createMetadata } from '@/lib/metadata';
 import type { Viewport } from 'next';
-import { Inter, Geist_Mono } from 'next/font/google';
+import { Geist_Mono, Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import '@/styles/globals.css';
 import 'katex/dist/katex.css';
@@ -44,9 +44,16 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
       suppressHydrationWarning
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'
+          rel='stylesheet'
+        />
       </head>
       <Body>
         <Provider>{children}</Provider>

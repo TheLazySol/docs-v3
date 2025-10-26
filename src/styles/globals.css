@@ -197,11 +197,11 @@
   .sidebar-nav-item {
     @apply rounded-sm border border-dashed border-border/50;
   }
-  
+
   .sidebar-nav-item:hover {
     @apply border-border;
   }
-  
+
   .sidebar-nav-item[data-active="true"] {
     @apply border-primary/50;
     border-color: #4a85ff !important;
@@ -212,11 +212,11 @@
   #nd-sidebar a[data-active] {
     @apply rounded-sm border border-dashed border-border/50;
   }
-  
+
   #nd-sidebar a[data-active]:hover {
     @apply border-border;
   }
-  
+
   #nd-sidebar a[data-active="true"] {
     @apply border-primary/50;
     border-color: #4a85ff !important;
@@ -227,7 +227,7 @@
   #nd-sidebar {
     border-bottom: 1px solid rgba(var(--color-border), 0.3);
   }
-  
+
   /* Alternative: Add a divider element */
   .sidebar-divider {
     height: 1px;
@@ -242,7 +242,7 @@
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   .mobile-menu-item svg {
     width: 1rem;
     height: 1rem;

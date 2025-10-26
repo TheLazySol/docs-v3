@@ -1,18 +1,17 @@
 'use client';
 
 import { Section } from '@/components/section';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cva } from 'class-variance-authority';
 import {
   BarChart3 as BarChartIcon,
+  Code,
   HandCoins as HandCoinsIcon,
   Boxes as IntegrationsIcon,
+  Shield,
+  TrendingUp,
   Users as UsersIcon,
   Zap,
-  Shield,
-  Code,
-  TrendingUp,
 } from 'lucide-react';
 import * as motion from 'motion/react-client';
 
@@ -86,14 +85,17 @@ const Features = () => (
         viewport={{ once: true }}
         className='flex flex-col gap-4 px-6 text-center'
       >
-        <Badge variant='outline' className='w-fit mx-auto mb-2 bg-primary/5 border-primary/20 text-primary'>
-          <Zap className='h-3 w-3 mr-2' />
+        <Badge
+          variant='outline'
+          className='mx-auto mb-2 w-fit border-primary/20 bg-primary/5 text-primary'
+        >
+          <Zap className='mr-2 h-3 w-3' />
           Why Choose Us
         </Badge>
-        <h2 className='max-w-3xl mx-auto font-bold text-3xl tracking-tight md:text-5xl lg:text-6xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent'>
+        <h2 className='mx-auto max-w-3xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text font-bold text-3xl text-transparent tracking-tight md:text-5xl lg:text-6xl'>
           Why Epicentral Labs?
         </h2>
-        <p className='max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
+        <p className='mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
           Open-source tools, standards, and infrastructure for decentralized
           options trading on Solana.
         </p>
@@ -107,11 +109,11 @@ const Features = () => (
               key={feature.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.5, 
+              transition={{
+                duration: 0.5,
                 delay: index * 0.1,
                 type: 'spring',
-                stiffness: 100
+                stiffness: 100,
               }}
               viewport={{ once: true }}
               className={featureItemVariants({
@@ -119,24 +121,33 @@ const Features = () => (
               })}
             >
               {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-              
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
+              />
+
               {/* Content */}
               <div className='relative z-10 flex flex-col gap-4'>
                 <div className='flex items-start justify-between'>
-                  <div className={`p-3 rounded-lg bg-background/50 border border-border/50 group-hover:border-primary/30 transition-colors duration-300`}>
-                    <feature.Icon className={`h-6 w-6 ${feature.iconColor} transition-transform group-hover:scale-110 group-hover:rotate-3 duration-300`} />
+                  <div
+                    className={`rounded-lg border border-border/50 bg-background/50 p-3 transition-colors duration-300 group-hover:border-primary/30`}
+                  >
+                    <feature.Icon
+                      className={`h-6 w-6 ${feature.iconColor} transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110`}
+                    />
                   </div>
-                  <Badge variant='secondary' className='text-xs bg-primary/10 text-primary border-primary/20'>
+                  <Badge
+                    variant='secondary'
+                    className='border-primary/20 bg-primary/10 text-primary text-xs'
+                  >
                     {feature.size === 'lg' ? 'Featured' : 'Standard'}
                   </Badge>
                 </div>
-                
+
                 <div className='space-y-2'>
-                  <h3 className='text-xl font-semibold tracking-tight transition-colors group-hover:text-primary duration-300'>
+                  <h3 className='font-semibold text-xl tracking-tight transition-colors duration-300 group-hover:text-primary'>
                     {feature.title}
                   </h3>
-                  <p className='text-muted-foreground leading-relaxed transition-colors group-hover:text-foreground/80 duration-300'>
+                  <p className='text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-foreground/80'>
                     {feature.description}
                   </p>
                 </div>
@@ -152,17 +163,17 @@ const Features = () => (
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
-        className='flex flex-wrap items-center justify-center gap-8 pt-8 border-t border-border/50'
+        className='flex flex-wrap items-center justify-center gap-8 border-border/50 border-t pt-8'
       >
-        <div className='flex items-center gap-3 text-sm text-muted-foreground'>
+        <div className='flex items-center gap-3 text-muted-foreground text-sm'>
           <Shield className='h-4 w-4 text-green-500' />
           <span>Secure & Audited</span>
         </div>
-        <div className='flex items-center gap-3 text-sm text-muted-foreground'>
+        <div className='flex items-center gap-3 text-muted-foreground text-sm'>
           <Code className='h-4 w-4 text-blue-500' />
           <span>Open Source</span>
         </div>
-        <div className='flex items-center gap-3 text-sm text-muted-foreground'>
+        <div className='flex items-center gap-3 text-muted-foreground text-sm'>
           <TrendingUp className='h-4 w-4 text-purple-500' />
           <span>High Performance</span>
         </div>

@@ -1,7 +1,4 @@
 {
   "title": "Documentation",
-  "pages": [
-    "index",
-    "stakinglab"
-  ]
+  "pages": ["index", "stakinglab"]
 }

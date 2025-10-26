@@ -35,4 +35,3 @@ export function Share({ url }: { url: string }): React.ReactElement {
     </Button>
   );
 }
-

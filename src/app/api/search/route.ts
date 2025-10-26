@@ -1,4 +1,4 @@
-import { getPosts, getDocs } from '@/lib/source';
+import { getDocs, getPosts } from '@/lib/source';
 import { createSearchAPI } from 'fumadocs-core/search/server';
 
 export const { GET } = createSearchAPI('advanced', {

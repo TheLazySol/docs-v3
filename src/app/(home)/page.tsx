@@ -1,12 +1,12 @@
 import Hero from '@/app/(home)/_components/hero';
 import Separator from '@/components/separator';
 import { getSortedByDatePosts } from '@/lib/source';
+import * as motion from 'motion/react-client';
 import CTA from './_components/cta';
 import { Customers } from './_components/customers';
 import { FAQ } from './_components/faq';
 import Features from './_components/features';
 import Testimonials from './_components/testimonials';
-import * as motion from 'motion/react-client';
 
 export default function Home() {
   const posts = getSortedByDatePosts().slice(0, 3);

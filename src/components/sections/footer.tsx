@@ -1,9 +1,4 @@
-import {
-  baseOptions,
-  linkItems,
-  owner,
-  postsPerPage,
-} from '@/app/layout.config';
+import { linkItems, owner, postsPerPage } from '@/app/layout.config';
 import { InlineLink } from '@/components/inline-link';
 import { getSortedByDatePosts, getTags } from '@/lib/source';
 import { cn } from '@/lib/utils';
@@ -49,9 +44,7 @@ export function Footer() {
               )
               .map((item, i) => (
                 <li key={`nav-${i}`}>
-                  <ActiveLink href={item.url}>
-                    {item.text}
-                  </ActiveLink>
+                  <ActiveLink href={item.url}>{item.text}</ActiveLink>
                 </li>
               ))}
           </ul>
@@ -63,9 +56,7 @@ export function Footer() {
           <ul className='flex flex-col gap-3'>
             {posts.slice(0, postsPerPage).map((post, i) => (
               <li key={`post-${i}`}>
-                <ActiveLink href={post.url}>
-                  {post.data.title}
-                </ActiveLink>
+                <ActiveLink href={post.url}>{post.data.title}</ActiveLink>
               </li>
             ))}
           </ul>
@@ -126,9 +117,7 @@ export function Footer() {
 function Copyright() {
   return (
     <div className='grid items-center gap-4 sm:grid-cols-3'>
-      <div className='w-min'>
-        {/* User authentication removed */}
-      </div>
+      <div className='w-min'>{/* User authentication removed */}</div>
       <div className='flex items-center sm:justify-center'>
         <p className='whitespace-nowrap text-muted-foreground text-sm'>
           &copy; {new Date().getFullYear()} {owner}. All rights reserved.
