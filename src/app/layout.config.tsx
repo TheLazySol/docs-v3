@@ -69,7 +69,7 @@ export const linkItems: LinkItemType[] = [
   },
 ];
 
-// Docs-specific links without social icons
+// Docs-specific links with social icons
 export const docsLinkItems: LinkItemType[] = [
   {
     icon: <Icons.info />,
@@ -99,6 +99,30 @@ export const docsLinkItems: LinkItemType[] = [
         icon: <Icons.tags />,
       },
     ],
+  },
+  {
+    type: 'icon',
+    text: 'Twitter',
+    url: 'https://x.com/EpicentralLabs',
+    icon: <Icons.twitter />,
+    label: 'Twitter',
+    secondary: true,
+  },
+  {
+    type: 'icon',
+    text: 'GitHub',
+    url: 'https://github.com/EpicentralLabs',
+    icon: <Icons.gitHub />,
+    label: 'GitHub',
+    secondary: true,
+  },
+  {
+    type: 'icon',
+    text: 'Discord',
+    url: 'https://discord.gg/5asAuY2sR8',
+    icon: <Icons.discord />,
+    label: 'Discord',
+    secondary: true,
   },
 ];
 
