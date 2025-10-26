@@ -48,8 +48,8 @@ export function Footer() {
                   item.type !== 'icon',
               )
               .map((item, i) => (
-                <li key={item.url}>
-                  <ActiveLink key={i.toString()} href={item.url}>
+                <li key={`nav-${i}`}>
+                  <ActiveLink href={item.url}>
                     {item.text}
                   </ActiveLink>
                 </li>
@@ -62,8 +62,8 @@ export function Footer() {
 
           <ul className='flex flex-col gap-3'>
             {posts.slice(0, postsPerPage).map((post, i) => (
-              <li key={post.url}>
-                <ActiveLink key={i.toString()} href={post.url}>
+              <li key={`post-${i}`}>
+                <ActiveLink href={post.url}>
                   {post.data.title}
                 </ActiveLink>
               </li>
@@ -76,8 +76,8 @@ export function Footer() {
 
           <ul className='flex flex-col gap-3'>
             {tags.slice(0, postsPerPage).map((name, i) => (
-              <li key={`/tags/${name}`}>
-                <ActiveLink key={i.toString()} href={`/tags/${name}`}>
+              <li key={`tag-${i}`}>
+                <ActiveLink href={`/tags/${name}`}>
                   <span className='capitalize'>{name}</span>
                 </ActiveLink>
               </li>
@@ -92,9 +92,8 @@ export function Footer() {
             {navItems
               .filter((item) => item.type === 'icon')
               .map((item, i) => (
-                <li key={item.url}>
+                <li key={`social-${i}`}>
                   <InlineLink
-                    key={i.toString()}
                     href={item.url}
                     className='inline-flex items-center gap-1.5 text-muted-foreground no-underline [&_svg]:size-4'
                   >
