@@ -285,12 +285,14 @@
   }
 
   #fd-toc a {
-    @apply text-muted-foreground transition-all duration-200 hover:text-foreground block py-1 px-2 rounded-md;
-    @apply hover:bg-accent/50 hover:translate-x-1;
+    @apply text-muted-foreground transition-all duration-200 hover:text-foreground block py-1.5 px-3 rounded-md;
+    @apply hover:bg-accent/50 hover:translate-x-0;
+    @apply border-l-2 border-transparent hover:border-primary/30;
   }
 
   #fd-toc a[data-active="true"] {
-    @apply text-primary font-semibold bg-primary/10 border-l-2 border-primary pl-3 -ml-1;
+    @apply text-primary font-semibold bg-transparent border-primary pl-3;
+    @apply border-l-2 border-primary;
   }
 
   /* TOC Navigation (mobile) styling */
@@ -303,24 +305,57 @@
     @apply text-muted-foreground hover:text-foreground font-medium px-4 py-3 transition-colors;
   }
 
-  /* TOC Title styling */
+  /* TOC Title styling - Enhanced */
   #toc-title {
-    @apply text-xs font-bold uppercase tracking-widest text-foreground/60 mb-4 pb-3 border-b border-border/40;
+    @apply text-xs font-bold uppercase tracking-widest text-foreground/60 mb-3 pb-3 border-b border-border/40;
     @apply text-primary/70;
+    @apply transition-colors duration-200;
   }
 
-  /* TOC Clerk Style Enhancement */
+  /* TOC nested items styling */
+  #fd-toc ul ul {
+    @apply ml-4 mt-0.5;
+  }
+
+  #fd-toc ul ul a {
+    @apply text-xs text-muted-foreground/80;
+  }
+
+  /* TOC Clerk Style Enhancement - More refined */
   #fd-toc[data-style="clerk"] {
     @apply border-0 bg-transparent p-0 shadow-none;
+    @apply max-w-none;
+  }
+
+  #fd-toc[data-style="clerk"] > div {
+    @apply space-y-1;
   }
 
   #fd-toc[data-style="clerk"] a {
-    @apply text-xs font-medium py-0.5 px-0 rounded-none hover:bg-transparent hover:translate-x-0;
+    @apply text-xs font-medium py-1 px-3 rounded-none hover:bg-transparent hover:translate-x-0;
     @apply border-l-2 border-transparent hover:border-primary/30;
+    @apply transition-all duration-200;
   }
 
   #fd-toc[data-style="clerk"] a[data-active="true"] {
-    @apply border-primary bg-transparent;
+    @apply border-primary bg-transparent font-semibold;
+  }
+
+  /* TOC custom scrollbar */
+  #fd-toc::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #fd-toc::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  #fd-toc::-webkit-scrollbar-thumb {
+    @apply bg-border/40 rounded-full;
+  }
+
+  #fd-toc::-webkit-scrollbar-thumb:hover {
+    @apply bg-border/60;
   }
 }
 
