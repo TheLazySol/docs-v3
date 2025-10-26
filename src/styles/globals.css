@@ -76,6 +76,33 @@
   }
 }
 
+/* Responsive layout with proportional width */
+#nd-docs-layout {
+  width: 100%;
+  max-width: min(95vw, 1400px);
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Ensure better content proportions */
+@media (min-width: 768px) {
+  #nd-docs-layout {
+    max-width: min(90vw, 1400px);
+  }
+}
+
+@media (min-width: 1200px) {
+  #nd-docs-layout {
+    max-width: min(85vw, 1600px);
+  }
+}
+
+@media (min-width: 1600px) {
+  #nd-docs-layout {
+    max-width: 1400px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
