@@ -23,9 +23,6 @@ export function Provider({
       disableTransitionOnChange
     >
       <RootProvider
-        theme={{
-          enabled: false,
-        }}
         search={{
           SearchDialog,
         }}

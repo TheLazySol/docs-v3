@@ -12,7 +12,7 @@ export default async function DocsIndexPage() {
   const { body: MDX, toc } = page.data as any;
 
   return (
-    <DocsPage toc={toc} full>
+    <DocsPage toc={toc}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
