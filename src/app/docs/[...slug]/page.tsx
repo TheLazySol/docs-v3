@@ -1,7 +1,7 @@
-import { getDoc, getDocs, type DocsPage as DocsPageType } from '@/lib/source';
-import { DocsPage, DocsDescription, DocsTitle, DocsBody } from 'fumadocs-ui/page';
+import { getDocs } from '@/lib/source';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import DocsPageComponent from '@/components/docs-page';
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -9,29 +9,7 @@ interface PageProps {
 
 export default async function DocsSlugPage({ params }: PageProps) {
   const { slug } = await params;
-  const page: DocsPageType | undefined = getDoc(slug);
-  
-  if (!page) {
-    notFound();
-  }
-
-  const { body: MDX, headings, lastModified } = page.data as any;
-
-  return (
-    <DocsPage 
-      toc={headings}
-      lastUpdate={lastModified ? new Date(lastModified) : undefined}
-      tableOfContent={{
-        style: 'clerk',
-      }}
-    >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody>
-        <MDX />
-      </DocsBody>
-    </DocsPage>
-  );
+  return <DocsPageComponent slug={slug} />;
 }
 
 export async function generateStaticParams() {
@@ -42,7 +20,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page: DocsPageType | undefined = getDoc(slug);
+  const { getDoc } = await import('@/lib/source');
+  const page = getDoc(slug);
   
   if (!page) {
     notFound();
