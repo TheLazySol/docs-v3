@@ -64,18 +64,18 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         transition={{ delay: 0.2, duration: 0.6 }}
         className='flex flex-col gap-6 text-center'
       >
-        <h1 className='max-w-4xl text-center font-bold text-5xl tracking-tight md:text-7xl lg:text-8xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent'>
+        <h1 className='max-w-4xl text-center font-bold text-5xl tracking-tight md:text-7xl lg:text-8xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent font-sans'>
           Pioneering DeFi
           <br />
           <span className='bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent'>
             Options on Solana
           </span>
         </h1>
-        <p className='max-w-3xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl lg:text-2xl'>
-          Providing the framework to bring on-chain options trading natively to Solana.
+        <p className='max-w-3xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl lg:text-2xl font-sans'>
+          Building the infrastructure for options trading on-chain
           <br />
           <span className='text-sm text-muted-foreground/80 mt-2 block'>
-            Built for developers, traders, and DeFi enthusiasts
+            The next chapter of decentralized finance.
           </span>
         </p>
       </motion.div>
@@ -107,30 +107,9 @@ const Hero = ({ posts }: { posts: Page[] }) => (
           <Link href='/contact'>
             <Icons.discord className='h-4 w-4' />
             Join Discord
-            <ArrowRight className='h-4 w-4 group-hover:translate-x-1 transition-transform' />
+
           </Link>
         </Button>
-      </motion.div>
-
-      {/* Stats or Trust Indicators */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        className='flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground'
-      >
-        <div className='flex items-center gap-2'>
-          <div className='h-2 w-2 rounded-full bg-green-500 animate-pulse' />
-          <span>Open Source</span>
-        </div>
-        <div className='flex items-center gap-2'>
-          <div className='h-2 w-2 rounded-full bg-blue-500 animate-pulse' />
-          <span>Solana Native</span>
-        </div>
-        <div className='flex items-center gap-2'>
-          <div className='h-2 w-2 rounded-full bg-purple-500 animate-pulse' />
-          <span>Developer Friendly</span>
-        </div>
       </motion.div>
     </div>
   </Section>
