@@ -41,8 +41,8 @@ export async function GET() {
   const [fonts] = await Promise.all([loadAssets()]);
 
   return generateOGImage({
-    title: 'SaasCN',
-    subtitle: 'Automate Smarter. Work Faster. Grow Better.',
+    title: 'Epicentral Labs',
+    subtitle: 'Decentralized Options Trading on Solana',
     fonts,
   });
 }

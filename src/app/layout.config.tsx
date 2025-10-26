@@ -2,16 +2,16 @@ import { Icons } from '@/components/icons/icons';
 import type { LinkItemType } from 'fumadocs-ui/layouts/links';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
-export const title = 'SaasCN';
+export const title = 'Epicentral Labs';
 export const description =
-  'A powerful platform to streamline your business operations.';
-export const owner = 'SaasCN';
+  'Documentation for Epicentral Labs - Decentralized Options Trading on Solana.';
+export const owner = 'Epicentral Labs';
 
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title,
   },
-  githubUrl: 'https://github.com/techwithanirudh/shadcn-saas-landing',
+  githubUrl: 'https://github.com/EpicentralLabs',
 };
 
 export const linkItems: LinkItemType[] = [
@@ -50,6 +50,30 @@ export const linkItems: LinkItemType[] = [
         icon: <Icons.mail />,
       },
     ],
+  },
+  {
+    type: 'icon',
+    text: 'Twitter',
+    url: 'https://x.com/EpicentralLabs',
+    icon: <Icons.twitter />,
+    label: 'Twitter',
+    secondary: true,
+  },
+  {
+    type: 'icon',
+    text: 'GitHub',
+    url: 'https://github.com/EpicentralLabs',
+    icon: <Icons.gitHub />,
+    label: 'GitHub',
+    secondary: true,
+  },
+  {
+    type: 'icon',
+    text: 'Discord',
+    url: 'https://discord.gg/5asAuY2sR8',
+    icon: <Icons.discord />,
+    label: 'Discord',
+    secondary: true,
   },
 ];
 

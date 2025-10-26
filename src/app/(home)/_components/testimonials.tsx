@@ -13,36 +13,36 @@ import { useEffect, useState } from 'react';
 
 const testimonials = [
   {
-    title: 'Transformed our workflow',
+    title: 'Open-source excellence',
     description:
-      'SaasCN has completely revolutionized how we handle our business processes. The automation features alone have saved us countless hours.',
+      'The Solana Options Standard SDK is incredibly well-designed and easy to use. Building on it has been a smooth experience.',
     author: {
       name: 'Hayden Bleasel',
       image: 'https://github.com/haydenbleasel.png',
     },
   },
   {
-    title: 'Enterprise-grade solution',
+    title: 'Great documentation',
     description:
-      'The platform offers enterprise-level features while maintaining an intuitive interface. Perfect for scaling organizations.',
+      'The documentation is comprehensive and the examples are clear. It made integrating options into our DeFi protocol straightforward.',
     author: {
       name: 'Lee Robinson',
       image: 'https://github.com/leerob.png',
     },
   },
   {
-    title: 'Exceptional integration',
+    title: 'Active community',
     description:
-      'The ease of integration with our existing tools was impressive. It fits perfectly into our tech stack.',
+      'The Discord community is helpful and responsive. The team is always available to answer questions and provide guidance.',
     author: {
       name: 'shadcn',
       image: 'https://github.com/shadcn.png',
     },
   },
   {
-    title: 'Outstanding support',
+    title: 'Solid foundation',
     description:
-      'Their customer support team goes above and beyond. Any questions we had were answered promptly and thoroughly.',
+      'Epicentral Labs is building the infrastructure that the Solana DeFi ecosystem needs. Their work on standards is invaluable.',
     author: {
       name: 'Pontus Abrahamsson',
       image: 'https://github.com/pontusab.png',
@@ -78,7 +78,7 @@ const Testimonials = () => {
             Loved by the community
           </h2>
           <p className='max-w-xl text-left text-lg text-muted-foreground leading-relaxed tracking-tight lg:max-w-lg'>
-            See what others are saying about SaasCN.
+            See what the community is saying about Epicentral Labs.
           </p>
         </div>
 

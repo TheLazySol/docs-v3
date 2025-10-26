@@ -45,14 +45,14 @@ const Hero = ({ posts }: { posts: Page[] }) => (
       </Button>
       <div className='flex flex-col gap-4'>
         <h1 className='max-w-2xl text-center font-regular text-5xl tracking-tighter md:text-7xl'>
-          The Future of
+          Decentralized Options
           <br />
-          Business Starts Here
+          Trading on Solana
         </h1>
         <p className='max-w-2xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
-          Say goodbye to manual workflows and inefficient processes. SaasCN
-          streamlines your business operations, making work intuitive,
-          efficient, and tailored to your needs.
+          Building the infrastructure for the next generation of DeFi options.
+          Open-source tools, standards, and SDKs for creating, executing, and
+          managing option contracts on Solana.
         </p>
       </div>
       <div className='flex flex-row gap-3'>

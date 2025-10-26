@@ -9,9 +9,9 @@ import {
 
 const faq = [
   {
-    question: 'What is SaasCN?',
+    question: 'What is Epicentral Labs?',
     answer:
-      'SaasCN is a comprehensive business operations platform that helps companies streamline their workflows, automate processes, and scale efficiently. Our solutions are designed for businesses of all sizes.',
+      'Epicentral Labs is building the future of decentralized options trading on Solana. We provide open-source tools and standards for creating, executing, and managing option contracts on the blockchain.',
   },
   {
     question: 'How secure is the platform?',
@@ -19,14 +19,14 @@ const faq = [
       'We implement enterprise-grade security measures, including end-to-end encryption, regular security audits, and compliance with industry standards. Your data security is our top priority.',
   },
   {
-    question: 'Can I integrate with other tools?',
+    question: 'How do I get started?',
     answer:
-      'Yes! SaasCN offers extensive integration capabilities with popular business tools and services. Our API and webhook system allows for seamless connection with your existing tech stack.',
+      'You can start by exploring our open-source Solana Options Standard SDK on GitHub. Join our Discord community for support, documentation, and to connect with other developers building on Solana.',
   },
   {
     question: 'What kind of support do you provide?',
     answer:
-      'Our dedicated support team is available 24/7 through multiple channels including live chat, email, and phone. We also provide extensive documentation and training resources.',
+      'We have an active Discord community where you can get help from our team and other developers. We also provide extensive documentation, examples, and resources to help you build with our SDK.',
   },
 ];
 

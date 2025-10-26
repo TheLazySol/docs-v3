@@ -1,6 +1,6 @@
 import { createMetadata } from '@/lib/metadata';
 import type { Viewport } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, Geist_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
 import '@/styles/globals.css';
 import 'katex/dist/katex.css';
@@ -9,9 +9,10 @@ import { Body } from './layout.client';
 import { description as homeDescription } from './layout.config';
 import { Provider } from './provider';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
@@ -21,8 +22,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = createMetadata({
   title: {
-    template: '%s | SaasCN',
-    default: 'SaasCN',
+    template: '%s | Epicentral Labs',
+    default: 'Epicentral Labs',
   },
   description: homeDescription,
   metadataBase: baseUrl,
@@ -39,7 +40,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${inter.variable} ${geistMono.variable} antialiased`}
       suppressHydrationWarning
     >
       <Body>

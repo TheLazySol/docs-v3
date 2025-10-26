@@ -32,7 +32,7 @@ export function generate({
   return (
     <div
       tw='flex h-full w-full bg-black text-white'
-      style={{ fontFamily: 'Geist Sans' }}
+      style={{ fontFamily: 'Inter' }}
     >
       <div tw='flex border absolute border-stone-900 border-dashed inset-y-0 left-16 w-[1px]' />
       <div tw='flex border absolute border-stone-900 border-dashed inset-y-0 right-16 w-[1px]' />

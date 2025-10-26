@@ -12,16 +12,17 @@ export default function About(): React.ReactElement {
       <div className='gap-4 px-6 py-10 md:py-14'>
         <div className='prose dark:prose-invert w-full space-y-4'>
           <p className='text-lg'>
-            Business tools today are overwhelming - complex interfaces,
-            disconnected systems, and manual processes that waste valuable time.
-            We believed there had to be a better way. That's why we built
-            SaasCN.
+            The DeFi options market on Solana needs better infrastructure,
+            standards, and tools. We recognized the opportunity to build
+            open-source solutions that would benefit the entire ecosystem.
+            That's why we founded Epicentral Labs.
           </p>
 
           <p className='text-lg'>
-            What began as a simple workflow automation tool has evolved into a
-            complete business operations platform. One that brings clarity to
-            chaos and makes automation accessible to everyone.
+            We're building the Solana Options Standard SDK and creating the
+            foundational infrastructure for decentralized options trading. Our
+            goal is to make options accessible, composable, and powerful for
+            everyone building on Solana.
           </p>
         </div>
       </div>

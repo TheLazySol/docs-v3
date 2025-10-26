@@ -65,11 +65,11 @@ const Features = () => (
     <div className='flex flex-col gap-10'>
       <div className='flex flex-col gap-2 px-6'>
         <h2 className='max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl'>
-          Why SaasCN?
+          Why Epicentral Labs?
         </h2>
         <p className='max-w-xl text-left text-lg text-muted-foreground leading-relaxed tracking-tight lg:max-w-lg'>
-          Powerful features to help your business succeed in today's competitive
-          landscape.
+          Open-source tools, standards, and infrastructure for decentralized
+          options trading on Solana.
         </p>
       </div>
 

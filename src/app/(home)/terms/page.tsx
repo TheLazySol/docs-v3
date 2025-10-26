@@ -40,9 +40,9 @@ const sections = [
     title: 'Overview',
     content: (
       <p>
-        SaasCN is a comprehensive business operations platform that helps
-        organizations streamline their workflows and processes. By using our
-        platform, you agree to these terms.
+        Epicentral Labs provides open-source tools and standards for
+        decentralized options trading on Solana. By using our documentation and
+        tools, you agree to these terms.
       </p>
     ),
   },
@@ -56,12 +56,12 @@ const sections = [
           </h3>
           <ul className='ml-4 list-disc space-y-2'>
             <li>
-              Our platform provides tools for workflow automation, analytics,
-              and business process management.
+              Our platform provides open-source SDKs, documentation, and tools
+              for decentralized options trading on Solana.
             </li>
             <li>
-              We offer various features including team collaboration, reporting,
-              and third-party integrations.
+              We offer various resources including examples, documentation, and
+              community support through Discord.
             </li>
             <li>
               The service is provided under standard business terms and

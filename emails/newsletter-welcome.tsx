@@ -71,23 +71,23 @@ export default function NewsletterWelcomeEmail({
     <Html>
       <Head>
         <Font
-          fontFamily='Alex Brush'
-          fallbackFontFamily='Georgia'
+          fontFamily='Inter'
+          fallbackFontFamily='Helvetica'
           webFont={{
-            url: 'https://fonts.gstatic.com/s/alexbrush/v22/SZc83FzrJKuqFbwMKk6EhUXz7RlNiCY.woff2',
+            url: 'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2',
             format: 'woff2',
           }}
           fontWeight={400}
           fontStyle='normal'
         />
         <Font
-          fontFamily='Bricolage Grotesque'
+          fontFamily='Inter'
           fallbackFontFamily='Helvetica'
           webFont={{
-            url: 'https://fonts.gstatic.com/s/bricolagegrotesque/v8/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGIInHWVyNJ.woff2',
+            url: 'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA-Ek-_EeA.woff2',
             format: 'woff2',
           }}
-          fontWeight={400}
+          fontWeight={600}
           fontStyle='normal'
         />
       </Head>
@@ -138,7 +138,7 @@ export default function NewsletterWelcomeEmail({
               </Text>
               <Text
                 className='select-none text-4xl text-zinc-900 leading-8'
-                style={{ fontFamily: 'Alex Brush' }}
+                style={{ fontFamily: 'Inter' }}
               >
                 The SaasCN Team
               </Text>

@@ -37,7 +37,7 @@ const Team = () => {
               className='rounded-xl p-6 transition-transform hover:scale-105'
             />
             <p className='text-muted-foreground text-sm'>
-              SaasCN founding team, John Doe, Jane Smith, and Alex Johnson
+              Epicentral Labs team
             </p>
           </div>
         </div>
