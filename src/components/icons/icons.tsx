@@ -20,8 +20,6 @@ import {
   Info,
   Laptop,
   Loader2,
-  LogIn,
-  LogOut,
   Mail,
   Menu,
   Moon,
@@ -66,8 +64,6 @@ export const Icons = {
   billing: CreditCard,
   ellipsis: MoreVertical,
   add: Plus,
-  logIn: LogIn,
-  logOut: LogOut,
   warning: AlertTriangle,
   user: User,
   arrowRight: ArrowRight,
@@ -82,7 +78,6 @@ export const Icons = {
   chevronDown: ChevronDown,
   mail: Mail,
   send: SendHorizonal,
-  pricing: CircleDollarSign,
   phone: PhoneCall,
   gitHub: ({ ...props }: LucideProps) => (
     <svg

@@ -68,7 +68,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
           </Link>
         </Button>
         <Button size='lg' className='group gap-4' asChild>
-          <Link href={env.NEXT_PUBLIC_APP_URL}>
+          <Link href={env.NEXT_PUBLIC_APP_URL || '/contact'}>
             Sign up{' '}
             <Icons.arrowUpRight className='group-hover:-rotate-12 size-4 transition-transform' />
           </Link>

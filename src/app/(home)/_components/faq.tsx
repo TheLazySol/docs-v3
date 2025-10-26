@@ -24,11 +24,6 @@ const faq = [
       'Yes! SaasCN offers extensive integration capabilities with popular business tools and services. Our API and webhook system allows for seamless connection with your existing tech stack.',
   },
   {
-    question: 'How does pricing work?',
-    answer:
-      'We offer flexible pricing tiers designed to scale with your business needs, from starter plans for small teams to enterprise solutions for large organizations. Check our pricing page for detailed information.',
-  },
-  {
     question: 'What kind of support do you provide?',
     answer:
       'Our dedicated support team is available 24/7 through multiple channels including live chat, email, and phone. We also provide extensive documentation and training resources.',

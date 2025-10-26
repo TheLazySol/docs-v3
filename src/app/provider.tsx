@@ -1,6 +1,5 @@
 'use client';
 
-import Analytics from '@/components/analytics';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
@@ -42,7 +41,6 @@ export function Provider({
             <ViewTransition>{children}</ViewTransition>
           </TooltipProvider>
         </ProgressProvider>
-        <Analytics />
         <Toaster />
         <TailwindIndicator />
       </RootProvider>

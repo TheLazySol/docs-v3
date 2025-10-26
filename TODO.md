@@ -7,7 +7,7 @@
   - Create a pre-build script that:
     - Scans all `.mdx` files.
     - Converts them to HTML.
-    - Updates an existing Resend broadcast item, or creates a new one if it doesn’t exist.
+    - Updates an existing newsletter broadcast item, or creates a new one if it doesn't exist.
   - Publishing is controlled manually by running a `publish` script.
   - Consider using [Beehiiv](https://www.beehiiv.com/) as an alternative.
   - Look at https://www.joshwcomeau.com/react/wonderful-emails-with-mjml-and-mdx/ for reference of integration of the newsletter

@@ -22,12 +22,6 @@ export const linkItems: LinkItemType[] = [
     active: 'url',
   },
   {
-    icon: <Icons.pricing />,
-    text: 'Pricing',
-    url: '/pricing',
-    active: 'url',
-  },
-  {
     icon: <Icons.phone />,
     text: 'Contact',
     url: '/contact',

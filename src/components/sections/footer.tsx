@@ -9,7 +9,6 @@ import { getSortedByDatePosts, getTags } from '@/lib/source';
 import { cn } from '@/lib/utils';
 import { getLinks } from 'fumadocs-ui/layouts/shared';
 import { ActiveLink } from '../active-link';
-import { UserButton } from '../auth/user-button';
 import { ThemeToggle } from '../theme-toggle';
 
 export function Footer() {
@@ -129,7 +128,7 @@ function Copyright() {
   return (
     <div className='grid items-center gap-4 sm:grid-cols-3'>
       <div className='w-min'>
-        <UserButton />
+        {/* User authentication removed */}
       </div>
       <div className='flex items-center sm:justify-center'>
         <p className='whitespace-nowrap text-muted-foreground text-sm'>

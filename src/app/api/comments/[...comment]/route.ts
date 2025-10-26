@@ -1,9 +1,5 @@
-import { auth, storage } from '@/server/comments/config';
-import { NextComment } from '@fuma-comment/server/next';
-
-export const { GET, DELETE, PATCH, POST } = NextComment({
-  // role: 'database', todo use role in auth
-  mention: { enabled: true },
-  auth: auth,
-  storage: storage,
-});
+// Comments API disabled - no auth system
+export const GET = () => new Response('Comments disabled', { status: 503 });
+export const POST = () => new Response('Comments disabled', { status: 503 });
+export const PATCH = () => new Response('Comments disabled', { status: 503 });
+export const DELETE = () => new Response('Comments disabled', { status: 503 });
