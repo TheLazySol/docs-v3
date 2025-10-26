@@ -9,10 +9,16 @@ export default async function DocsIndexPage() {
     notFound();
   }
 
-  const { body: MDX, toc } = page.data as any;
+  const { body: MDX, toc, lastModified } = page.data as any;
 
   return (
-    <DocsPage toc={toc}>
+    <DocsPage 
+      toc={toc}
+      lastUpdate={lastModified ? new Date(lastModified) : undefined}
+      tableOfContent={{
+        style: 'clerk',
+      }}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>

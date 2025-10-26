@@ -273,6 +273,55 @@
     background-image: radial-gradient(transparent 1px, rgb(0, 0, 0) 1px);
     mask: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0, 0.6) 100%);
   }
+
+  /* TOC (Table of Contents) styling */
+  #fd-toc {
+    @apply rounded-xl border border-solid border-border/40 bg-card/50 backdrop-blur-sm shadow-sm p-5 max-w-xs;
+    @apply hover:shadow-md hover:border-border/60 transition-all duration-200;
+  }
+
+  #fd-toc > div {
+    @apply text-sm space-y-1.5;
+  }
+
+  #fd-toc a {
+    @apply text-muted-foreground transition-all duration-200 hover:text-foreground block py-1 px-2 rounded-md;
+    @apply hover:bg-accent/50 hover:translate-x-1;
+  }
+
+  #fd-toc a[data-active="true"] {
+    @apply text-primary font-semibold bg-primary/10 border-l-2 border-primary pl-3 -ml-1;
+  }
+
+  /* TOC Navigation (mobile) styling */
+  #fd-tocnav {
+    @apply border-border border-b border-solid bg-card/80 backdrop-blur-sm sticky top-0 z-10;
+    @apply shadow-sm;
+  }
+
+  #fd-tocnav button {
+    @apply text-muted-foreground hover:text-foreground font-medium px-4 py-3 transition-colors;
+  }
+
+  /* TOC Title styling */
+  #toc-title {
+    @apply text-xs font-bold uppercase tracking-widest text-foreground/60 mb-4 pb-3 border-b border-border/40;
+    @apply text-primary/70;
+  }
+
+  /* TOC Clerk Style Enhancement */
+  #fd-toc[data-style="clerk"] {
+    @apply border-0 bg-transparent p-0 shadow-none;
+  }
+
+  #fd-toc[data-style="clerk"] a {
+    @apply text-xs font-medium py-0.5 px-0 rounded-none hover:bg-transparent hover:translate-x-0;
+    @apply border-l-2 border-transparent hover:border-primary/30;
+  }
+
+  #fd-toc[data-style="clerk"] a[data-active="true"] {
+    @apply border-primary bg-transparent;
+  }
 }
 
 ::selection {

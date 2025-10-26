@@ -36,7 +36,7 @@ export const DocsLayout = ({
 
   const pageStyles: PageStyles = {
     tocNav: cn('lg:px-4 xl:hidden'),
-    toc: cn('max-xl:hidden'),
+    toc: cn('max-xl:hidden sticky top-24 z-10 h-fit'),
     page: cn('mt-[var(--fd-nav-height)]'),
     article: cn('mx-auto'),
   };

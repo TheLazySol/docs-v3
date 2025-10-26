@@ -15,12 +15,15 @@ export default async function DocsSlugPage({ params }: PageProps) {
     notFound();
   }
 
-  const { body: MDX, toc, lastModified } = page.data as any;
+  const { body: MDX, headings, lastModified } = page.data as any;
 
   return (
     <DocsPage 
-      toc={toc} 
+      toc={headings}
       lastUpdate={lastModified ? new Date(lastModified) : undefined}
+      tableOfContent={{
+        style: 'clerk',
+      }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
