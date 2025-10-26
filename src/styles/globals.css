@@ -112,6 +112,39 @@
     @apply bg-background text-foreground;
   }
 
+  .dark body {
+    background-color: #010101;
+  }
+
+  .dark {
+    background-color: #010101;
+  }
+
+  .dark #__next {
+    background-color: #010101;
+  }
+
+  .dark main {
+    background-color: #010101;
+  }
+
+  .dark div {
+    background-color: transparent;
+  }
+
+  .dark .container {
+    background-color: transparent;
+  }
+
+  /* Navigation dark mode styling */
+  .dark #nd-nav {
+    background-color: #010101 !important;
+  }
+
+  .dark header {
+    background-color: #010101 !important;
+  }
+
   html {
     @apply scroll-smooth accent-primary scrollbar-thin scrollbar-track-transparent scrollbar-thumb-border dark:scrollbar-track-transparent;
   }

@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Beams from '@/components/Beams';
 
 const Hero = ({ posts }: { posts: Page[] }) => (
-  <Section className='relative w-full overflow-hidden px-4 py-16 sm:px-16 sm:py-24 md:py-32'>
+  <Section className='hero-section relative w-full overflow-hidden px-4 py-16 sm:px-16 sm:py-24 md:py-32'>
     {/* Enhanced Background with Gradient Overlay */}
     <motion.div
       initial={{ opacity: 0 }}
@@ -19,14 +19,14 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         duration: 0.4,
         scale: { type: 'spring', visualDuration: 0.4, bounce: 0.5 },
       }}
-      whileInView={{ opacity: 0.75 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       className='-z-10 absolute inset-0 h-full w-full'
     >
       <Beams
         beamWidth={2}
         beamHeight={18}
-        beamNumber={12}
+        beamNumber={8}
         lightColor='#4a85ff'
         speed={2}
         noiseIntensity={1.75}
@@ -34,7 +34,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         rotation={35}
       />
       {/* Gradient overlay for better text contrast */}
-      <div className='absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80' />
+
     </motion.div>
 
     <div className='mx-auto flex flex-col items-center justify-center gap-8 relative z-10'>
@@ -46,7 +46,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
       >
         <Badge
           variant='secondary'
-          className='group gap-2 bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 hover:border-primary/30 transition-all duration-300'
+          className='group gap-2 bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 hover:border-primary/30 transition-all duration-300 text-white'
           asChild
         >
           <Link href={`/blog/${posts?.[0]?.slugs?.join('/')}`} className='flex items-center gap-2'>
@@ -64,17 +64,17 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         transition={{ delay: 0.2, duration: 0.6 }}
         className='flex flex-col gap-6 text-center'
       >
-        <h1 className='max-w-4xl text-center font-bold text-5xl tracking-tight md:text-7xl lg:text-8xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent font-sans'>
+        <h1 className='max-w-4xl text-center font-bold text-5xl tracking-tight md:text-7xl lg:text-8xl font-sans text-white'>
           Pioneering DeFi
           <br />
-          <span className='bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent'>
+          <span className='text-white'>
             Options on Solana
           </span>
         </h1>
-        <p className='max-w-3xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl lg:text-2xl font-sans'>
+        <p className='max-w-3xl text-center text-lg leading-relaxed tracking-tight md:text-xl lg:text-2xl font-sans text-white/90'>
           Building the infrastructure for options trading on-chain
           <br />
-          <span className='text-sm text-muted-foreground/80 mt-2 block'>
+          <span className='text-sm mt-2 block text-white/70'>
             The next chapter of decentralized finance.
           </span>
         </p>

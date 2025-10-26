@@ -18,7 +18,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           />
         ),
       }}
-      className='pt-0 min-h-screen bg-gradient-to-br from-background via-background to-background/95'
+      className='pt-0 min-h-screen bg-gradient-to-br from-background via-background to-background/95 dark:bg-[#050505]'
     >
       <main className='flex flex-1 flex-col relative'>
         {/* Enhanced background with subtle patterns */}
