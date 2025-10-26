@@ -20,7 +20,6 @@ export default async function DocsSlugPage({ params }: PageProps) {
   return (
     <DocsPage 
       toc={toc} 
-      full
       lastUpdate={lastModified ? new Date(lastModified) : undefined}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
