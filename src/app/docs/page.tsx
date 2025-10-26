@@ -3,7 +3,7 @@ import { DocsPage, DocsDescription, DocsTitle, DocsBody } from 'fumadocs-ui/page
 import { notFound } from 'next/navigation';
 
 export default async function DocsIndexPage() {
-  const page: DocsPageType | undefined = getDoc(['index']);
+  const page: DocsPageType | undefined = getDoc([]);
   
   if (!page) {
     notFound();

@@ -11,7 +11,7 @@ export const { getPage: getPost, getPages: getPosts, pageTree } = source;
 
 export const docsSource = loader({
   baseUrl: '/docs',
-  source: createMDXSource(docs),
+  source: docs.toFumadocsSource(),
 });
 export const { getPage: getDoc, getPages: getDocs, pageTree: docsPageTree } = docsSource;
 
