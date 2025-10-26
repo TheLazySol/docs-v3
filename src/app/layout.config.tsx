@@ -22,6 +22,11 @@ export const linkItems: LinkItemType[] = [
     active: 'url',
   },
   {
+    text: 'Docs',
+    url: '/docs',
+    active: 'url',
+  },
+  {
     type: 'menu',
     text: 'Blog',
     items: [

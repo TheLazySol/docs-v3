@@ -1,13 +1,26 @@
 import { loader } from 'fumadocs-core/source';
 import type { InferMetaType, InferPageType } from 'fumadocs-core/source';
 import { createMDXSource } from 'fumadocs-mdx';
-import { blog } from '.source';
+import { blog, docs } from '.source';
 
 export const source = loader({
   baseUrl: '/blog',
   source: createMDXSource(blog),
 });
 export const { getPage: getPost, getPages: getPosts, pageTree } = source;
+
+export const docsSource = loader({
+  baseUrl: '/docs',
+  source: createMDXSource(docs),
+});
+export const { getPage: getDoc, getPages: getDocs, pageTree: docsPageTree } = docsSource;
+
+export const getPageTree = (type: 'blog' | 'docs') => {
+  if (type === 'docs') {
+    return docsPageTree;
+  }
+  return pageTree;
+};
 
 export type Post = ReturnType<typeof getPost>;
 
@@ -38,3 +51,6 @@ export const getPostsByTag = (tag: string) => {
 
 export type Page = InferPageType<typeof source>;
 export type Meta = InferMetaType<typeof source>;
+
+export type DocsPage = InferPageType<typeof docsSource>;
+export type DocsMeta = InferMetaType<typeof docsSource>;

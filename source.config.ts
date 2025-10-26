@@ -2,6 +2,7 @@ import { transformerRemoveNotationEscape } from '@shikijs/transformers';
 import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
 import {
   defineCollections,
+  defineDocs,
   defineConfig,
   frontmatterSchema,
 } from 'fumadocs-mdx/config';
@@ -12,7 +13,7 @@ import { z } from 'zod';
 
 export const blog = defineCollections({
   type: 'doc',
-  dir: 'content',
+  dir: 'content/blog',
   schema: frontmatterSchema.extend({
     date: z
       .string()
@@ -32,6 +33,11 @@ export const blog = defineCollections({
     tags: z.array(z.string()).optional(),
     image: z.string().optional(),
   }),
+});
+
+
+export const docs = defineDocs({
+  dir: 'content/docs',
 });
 
 export default defineConfig({
