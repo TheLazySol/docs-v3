@@ -92,7 +92,7 @@ const Features = () => (
           <Zap className='mr-2 h-3 w-3' />
           Why Choose Us
         </Badge>
-        <h2 className='mx-auto max-w-3xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text font-bold text-3xl text-transparent tracking-tight md:text-5xl lg:text-6xl'>
+        <h2 className='mx-auto max-w-3xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text font-bold text-3xl text-transparent leading-tight md:text-5xl lg:text-6xl'>
           Why Epicentral Labs?
         </h2>
         <p className='mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>

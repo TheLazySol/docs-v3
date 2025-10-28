@@ -4,14 +4,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { env } from '@/env';
-import { ArrowRight, Rocket, Star, Users, Zap } from 'lucide-react';
+import { ArrowRight, Landmark, Rocket, Star, Users, Zap } from 'lucide-react';
 import * as motion from 'motion/react-client';
 import Link from 'next/link';
 import type React from 'react';
 
 export default function CTA(): React.ReactElement {
   return (
-    <Section className='relative overflow-hidden px-4 py-16 sm:px-16 sm:py-24 md:py-32'>
+    <Section className='relative overflow-hidden px-4 py-20 sm:px-16 sm:py-28 md:py-36'>
       {/* Background Gradient */}
       <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/5' />
 
@@ -25,17 +25,25 @@ export default function CTA(): React.ReactElement {
         >
           <Badge
             variant='outline'
-            className='mb-4 border-primary/20 bg-primary/10 text-primary'
+            className='mb-4 border-primary/20 bg-primary/10 text-primary no-underline transition-colors cursor-pointer'
+            asChild
           >
-            <Rocket className='mr-2 h-3 w-3' />
-            Ready to Start?
+            <Link
+              href="https://v2.realms.today/dao/5PP7vKjJyLw1MR55LoexRsCj3CpZj9MdD6aNXRrvxG42/proposals"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center no-underline"
+            >
+              <Landmark className='mr-2 h-3 w-4' />
+              Join Epicentral DAO
+              <ArrowRight className='ml-2 h-3 w-3' />
+            </Link>
           </Badge>
-          <h2 className='mx-auto mb-6 max-w-4xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text font-bold text-3xl text-transparent tracking-tight md:text-5xl lg:text-6xl'>
-            Build the Future of DeFi Options
+          <h2 className='mx-auto mb-8 max-w-5xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text font-bold text-3xl text-transparent tracking-tight leading-tight md:text-5xl lg:text-6xl'>
+            Shaping DeFi Through Governance
           </h2>
           <p className='mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
-            Join the Solana options ecosystem. Explore our open-source SDK and
-            tools to create, execute, and manage decentralized option contracts.
+            Stake $LABS Tokens to join the DAO and start earning rewards.
           </p>
         </motion.div>
 
