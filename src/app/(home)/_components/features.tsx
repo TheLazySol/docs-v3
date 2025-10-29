@@ -103,8 +103,7 @@ const Features = () => (
           What is Epicentral Labs?
         </h2>
         <p className='mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
-          Open-source tools, standards, and infrastructure for decentralized
-          options trading on Solana.
+          A community-governed DAO bringing decentralized options trading on-chain.
         </p>
       </motion.div>
 
