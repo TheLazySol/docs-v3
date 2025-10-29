@@ -9,9 +9,11 @@ import {
   Code,
   HandCoins as HandCoinsIcon,
   Boxes as IntegrationsIcon,
+  Landmark,
   Shield,
   TrendingUp,
   Users as UsersIcon,
+  ChartCandlestick,
   Zap,
 } from 'lucide-react';
 import * as motion from 'motion/react-client';
@@ -35,10 +37,10 @@ const featureItemVariants = cva(
 const features = [
   {
     id: 1,
-    Icon: HandCoinsIcon,
-    title: 'Cost-Effective Solutions',
+    Icon: Landmark,
+    title: 'Community Governed',
     description:
-      'Maximize ROI with our affordable business automation solutions that scale with your needs.',
+      'Epicentral Labs is a decentralized autonomous organization (DAO), limited liability company (LLC), that is governed by LABS Token Holders (Voters). Voters have on-chain, legally-binding, authoritative power in how the DAO is operated and executed by The Core Team.',
     size: 'lg',
     gradient: 'from-green-500/20 to-emerald-500/20',
     iconColor: 'text-[#4a85ff]',
@@ -46,10 +48,10 @@ const features = [
   },
   {
     id: 2,
-    Icon: BarChartIcon,
-    title: 'Advanced Analytics',
+    Icon: ChartCandlestick,
+    title: 'OPX',
     description:
-      'Get deep insights into your business performance with comprehensive analytics and reporting tools.',
+      'The first, truly decentralized, option trading platform on the Solana blockchain. Allowing for users to trade traditional, American-style Options on any token¹.',
     size: 'sm',
     gradient: 'from-blue-500/20 to-cyan-500/20',
     iconColor: 'text-[#4a85ff]',
@@ -58,9 +60,9 @@ const features = [
   {
     id: 3,
     Icon: UsersIcon,
-    title: 'Team Collaboration',
+    title: 'Core Team Execution',
     description:
-      'Work seamlessly with your team through integrated collaboration features and real-time updates.',
+      'The Core Team is responsible for executing the decisions made by DAO Voters and manage daily operations on behalf of the DAO.',
     size: 'sm',
     gradient: 'from-purple-500/20 to-pink-500/20',
     iconColor: 'text-[#4a85ff]',
@@ -68,10 +70,10 @@ const features = [
   },
   {
     id: 4,
-    Icon: IntegrationsIcon,
-    title: 'Easy Integration',
+    Icon: Code,
+    title: 'Building the Solana Option Standard',
     description:
-      'Connect with your favorite tools and services through our extensive integration ecosystem.',
+      'Our mission is to provide autonomous, non-custodial solution(s) for how on-chain options are created, priced, and settled through our Solana Option Standard.',
     size: 'lg',
     gradient: 'from-orange-500/20 to-red-500/20',
     iconColor: 'text-[#4a85ff]',
@@ -98,7 +100,7 @@ const Features = () => (
           Why Choose Us
         </Badge>
         <h2 className='mx-auto max-w-3xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text font-bold text-3xl text-transparent leading-tight md:text-5xl lg:text-6xl'>
-          Why Epicentral Labs?
+          What is Epicentral Labs?
         </h2>
         <p className='mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
           Open-source tools, standards, and infrastructure for decentralized
@@ -141,12 +143,6 @@ const Features = () => (
                         className={`h-6 w-6 ${feature.iconColor}`}
                       />
                     </div>
-                    <Badge
-                      variant='secondary'
-                      className='border-primary/20 bg-primary/10 text-primary text-xs'
-                    >
-                      {feature.size === 'lg' ? 'Featured' : 'Standard'}
-                    </Badge>
                   </div>
 
                   <div className='flex flex-1 flex-col space-y-2'>
