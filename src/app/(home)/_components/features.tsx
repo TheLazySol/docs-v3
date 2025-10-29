@@ -62,7 +62,7 @@ const features = [
     Icon: UsersIcon,
     title: 'Core Team Execution',
     description:
-      'The Core Team is responsible for executing the decisions made by DAO Voters and manage daily operations on behalf of the DAO.',
+      'The Core Team is responsible for executing the decisions made by DAO Voters and manage daily operations on behalf of the DAO.²',
     size: 'sm',
     gradient: 'from-purple-500/20 to-pink-500/20',
     iconColor: 'text-[#4a85ff]',
@@ -73,7 +73,7 @@ const features = [
     Icon: Code,
     title: 'Building the Solana Option Standard',
     description:
-      'Our mission is to provide autonomous, non-custodial solution(s) for how on-chain options are created, priced, and settled through our Solana Option Standard.',
+      'Our mission is to provide autonomous, non-custodial solutions³ for how on-chain options are created, priced, and settled through our Solana Option Standard.',
     size: 'lg',
     gradient: 'from-orange-500/20 to-red-500/20',
     iconColor: 'text-[#4a85ff]',
@@ -100,7 +100,7 @@ const Features = () => (
           Why Choose Us
         </Badge>
         <h2 className='mx-auto max-w-3xl bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text font-bold text-3xl text-transparent leading-tight md:text-5xl lg:text-6xl'>
-          What is Epicentral Labs?
+          What is Epicentral <span style={{ color: '#4a85ff' }}>Labs</span>?
         </h2>
         <p className='mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
           A community-governed DAO bringing decentralized options trading on-chain.
