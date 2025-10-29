@@ -1,17 +1,17 @@
 'use client';
 
-import {
-  AnchorProvider,
-  ScrollProvider,
-  TOCItem,
-  type TOCItemType,
-} from 'fumadocs-core/toc';
-import { type ReactNode, useRef } from 'react';
-import { ExternalLink } from 'lucide-react';
 import { githubConfig } from '@/lib/github-config';
+import type { TOCItemType } from 'fumadocs-core/server';
+import { AnchorProvider, ScrollProvider, TOCItem } from 'fumadocs-core/toc';
+import { ExternalLink } from 'lucide-react';
+import { useRef } from 'react';
+
+interface ExtendedTOCItemType extends TOCItemType {
+  children?: ExtendedTOCItemType[];
+}
 
 interface CustomTOCProps {
-  items: TOCItemType[];
+  items: ExtendedTOCItemType[];
   title?: string;
   className?: string;
   showScrollIndicator?: boolean;
@@ -33,31 +33,28 @@ export function CustomTOC({
 
   return (
     <AnchorProvider toc={items}>
-      <nav 
+      <nav
         className={`sticky top-20 max-h-[calc(100vh-6rem)] overflow-auto ${className}`}
-        aria-label="Table of Contents"
+        aria-label='Table of Contents'
       >
-        <div className="space-y-4">
+        <div className='space-y-4'>
           {title && (
-            <h2 
-              id="toc-title" 
-              className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-3 pb-3 border-b border-border/40"
+            <h2
+              id='toc-title'
+              className='mb-3 border-border/40 border-b pb-3 font-bold text-primary/70 text-xs uppercase tracking-widest'
             >
               {title}
             </h2>
           )}
-          
-          <div ref={viewRef} className="space-y-1.5">
-            <ScrollProvider 
-              containerRef={viewRef}
-              showIndicator={showScrollIndicator}
-            >
-              <ul className="space-y-0.5">
+
+          <div ref={viewRef} className='space-y-1.5'>
+            <ScrollProvider containerRef={viewRef}>
+              <ul className='space-y-0.5'>
                 {items.map((item) => (
                   <li key={item.url}>
-                    <TOCItem 
+                    <TOCItem
                       href={item.url}
-                      className="block text-sm text-muted-foreground transition-colors hover:text-foreground py-1.5 px-3 rounded-md hover:bg-accent/50 border-l-2 border-transparent hover:border-primary/30 data-[active=true]:border-primary data-[active=true]:text-primary data-[active=true]:font-semibold data-[active=true]:bg-transparent"
+                      className='block rounded-md border-transparent border-l-2 px-3 py-1.5 text-muted-foreground text-sm transition-colors hover:border-primary/30 hover:bg-accent/50 hover:text-foreground data-[active=true]:border-primary data-[active=true]:bg-transparent data-[active=true]:font-semibold data-[active=true]:text-primary'
                     >
                       {item.title}
                     </TOCItem>
@@ -66,30 +63,31 @@ export function CustomTOC({
               </ul>
             </ScrollProvider>
           </div>
-          
+
           {/* Footer for TOC */}
-          <div className="mt-6 pt-4 border-t border-border/40 space-y-3">
-            <p className="text-xs text-muted-foreground">
-              <span className="text-primary font-medium">{items.length}</span> sections
+          <div className='mt-6 space-y-3 border-border/40 border-t pt-4'>
+            <p className='text-muted-foreground text-xs'>
+              <span className='font-medium text-primary'>{items.length}</span>{' '}
+              sections
             </p>
             {lastModified && (
               <div>
-                <p className="text-xs text-muted-foreground">
-                  <span className="font-medium">Last updated:</span>{' '}
+                <p className='text-muted-foreground text-xs'>
+                  <span className='font-medium'>Last updated:</span>{' '}
                   {githubConfig.formatDate(lastModified)}
                 </p>
               </div>
             )}
             {githubEditUrl && (
               <div>
-                <a 
-                  href={githubEditUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-xs text-primary hover:underline flex items-center gap-1.5 group"
+                <a
+                  href={githubEditUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='group flex items-center gap-1.5 text-primary text-xs hover:underline'
                 >
                   <span>Edit this page</span>
-                  <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ExternalLink className='group-hover:-translate-y-0.5 h-3 w-3 transition-transform group-hover:translate-x-0.5' />
                 </a>
               </div>
             )}
@@ -101,34 +99,34 @@ export function CustomTOC({
 }
 
 interface NestedTOCProps {
-  items: TOCItemType[];
+  items: ExtendedTOCItemType[];
   depth?: number;
   maxDepth?: number;
 }
 
-export function NestedTOC({ 
-  items, 
-  depth = 0, 
-  maxDepth = 2 
-}: NestedTOCProps) {
+export function NestedTOC({ items, depth = 0, maxDepth = 2 }: NestedTOCProps) {
   if (depth > maxDepth || !items || items.length === 0) return null;
 
   return (
-    <ul className="space-y-1">
+    <ul className='space-y-1'>
       {items.map((item) => (
         <li key={item.url} className={depth > 0 ? 'ml-4' : ''}>
-          <TOCItem 
+          <TOCItem
             href={item.url}
-            className={`block text-sm transition-colors py-1 px-2 rounded-md hover:bg-accent/50 ${
-              depth === 0 
-                ? 'text-muted-foreground hover:text-foreground font-medium' 
-                : 'text-muted-foreground/80 hover:text-muted-foreground text-xs'
+            className={`block rounded-md px-2 py-1 text-sm transition-colors hover:bg-accent/50 ${
+              depth === 0
+                ? 'font-medium text-muted-foreground hover:text-foreground'
+                : 'text-muted-foreground/80 text-xs hover:text-muted-foreground'
             }`}
           >
             {item.title}
           </TOCItem>
           {item.children && item.children.length > 0 && (
-            <NestedTOC items={item.children} depth={depth + 1} maxDepth={maxDepth} />
+            <NestedTOC
+              items={item.children}
+              depth={depth + 1}
+              maxDepth={maxDepth}
+            />
           )}
         </li>
       ))}

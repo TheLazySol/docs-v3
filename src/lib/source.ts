@@ -13,7 +13,11 @@ export const docsSource = loader({
   baseUrl: '/docs',
   source: docs.toFumadocsSource(),
 });
-export const { getPage: getDoc, getPages: getDocs, pageTree: docsPageTree } = docsSource;
+export const {
+  getPage: getDoc,
+  getPages: getDocs,
+  pageTree: docsPageTree,
+} = docsSource;
 
 export const getPageTree = (type: 'blog' | 'docs') => {
   if (type === 'docs') {

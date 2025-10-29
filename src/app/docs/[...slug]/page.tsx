@@ -1,7 +1,7 @@
+import DocsPageComponent from '@/components/docs-page';
 import { getDocs } from '@/lib/source';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import DocsPageComponent from '@/components/docs-page';
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -18,11 +18,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const { getDoc } = await import('@/lib/source');
   const page = getDoc(slug);
-  
+
   if (!page) {
     notFound();
   }

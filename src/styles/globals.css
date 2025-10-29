@@ -112,6 +112,39 @@
     @apply bg-background text-foreground;
   }
 
+  .dark body {
+    background-color: #010101;
+  }
+
+  .dark {
+    background-color: #010101;
+  }
+
+  .dark #__next {
+    background-color: #010101;
+  }
+
+  .dark main {
+    background-color: #010101;
+  }
+
+  .dark div {
+    background-color: transparent;
+  }
+
+  .dark .container {
+    background-color: transparent;
+  }
+
+  /* Navigation dark mode styling */
+  .dark #nd-nav {
+    background-color: #010101 !important;
+  }
+
+  .dark header {
+    background-color: #010101 !important;
+  }
+
   html {
     @apply scroll-smooth accent-primary scrollbar-thin scrollbar-track-transparent scrollbar-thumb-border dark:scrollbar-track-transparent;
   }
@@ -164,11 +197,11 @@
   .sidebar-nav-item {
     @apply rounded-sm border border-dashed border-border/50;
   }
-  
+
   .sidebar-nav-item:hover {
     @apply border-border;
   }
-  
+
   .sidebar-nav-item[data-active="true"] {
     @apply border-primary/50;
     border-color: #4a85ff !important;
@@ -179,11 +212,11 @@
   #nd-sidebar a[data-active] {
     @apply rounded-sm border border-dashed border-border/50;
   }
-  
+
   #nd-sidebar a[data-active]:hover {
     @apply border-border;
   }
-  
+
   #nd-sidebar a[data-active="true"] {
     @apply border-primary/50;
     border-color: #4a85ff !important;
@@ -194,7 +227,7 @@
   #nd-sidebar {
     border-bottom: 1px solid rgba(var(--color-border), 0.3);
   }
-  
+
   /* Alternative: Add a divider element */
   .sidebar-divider {
     height: 1px;
@@ -209,7 +242,7 @@
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   .mobile-menu-item svg {
     width: 1rem;
     height: 1rem;
