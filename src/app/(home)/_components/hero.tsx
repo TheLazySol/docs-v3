@@ -72,7 +72,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
           <span className='text-white'>Options on Solana</span>
         </h1>
         <p className='max-w-3xl text-center font-sans text-lg text-white/90 leading-relaxed tracking-tight md:text-xl lg:text-2xl'>
-          Building the infrastructure for options trading on-chain
+          Building the infrastructure for on-chain options trading
           <br />
           <span className='mt-2 block text-sm text-white/70'>
             The next chapter of decentralized finance.
