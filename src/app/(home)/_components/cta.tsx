@@ -55,7 +55,7 @@ export default function CTA(): React.ReactElement {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className='relative overflow-hidden border-primary/20 bg-gradient-to-br from-primary/5 to-background transition-all duration-300 hover:from-primary/10 hover:to-background hover:shadow-primary/10 hover:shadow-xl'>
+            <Card className='relative overflow-visible border-primary/20 bg-gradient-to-br from-primary/5 to-background transition-all duration-300 hover:from-primary/10 hover:to-background shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
               <CardContent className='p-8'>
                 <div className='mb-6 flex items-start gap-4'>
                   <div className='rounded-lg border border-primary/20 bg-primary/10 p-3'>
@@ -108,7 +108,7 @@ export default function CTA(): React.ReactElement {
             viewport={{ once: true }}
             className='space-y-4'
           >
-            <Card className='border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80'>
+            <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
               <CardContent className='p-6'>
                 <div className='flex items-center gap-4'>
                   <div className='rounded-lg border border-blue-500/20 bg-blue-500/10 p-2'>
@@ -129,7 +129,7 @@ export default function CTA(): React.ReactElement {
               </CardContent>
             </Card>
 
-            <Card className='border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80'>
+            <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
               <CardContent className='p-6'>
                 <div className='flex items-center gap-4'>
                   <div className='rounded-lg border border-green-500/20 bg-green-500/10 p-2'>
@@ -150,7 +150,7 @@ export default function CTA(): React.ReactElement {
               </CardContent>
             </Card>
 
-            <Card className='border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80'>
+            <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
               <CardContent className='p-6'>
                 <div className='flex items-center gap-4'>
                   <div className='rounded-lg border border-purple-500/20 bg-purple-500/10 p-2'>

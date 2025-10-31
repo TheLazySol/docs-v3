@@ -8,6 +8,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel';
+import SpotlightCard from '@/components/ui/spotlight-card';
 import { User } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -84,33 +85,38 @@ const Testimonials = () => {
 
         <Carousel
           setApi={setApi}
-          className='w-full border-border border-t border-dashed'
+          className='w-full'
         >
-          <CarouselContent className='ml-0 divide-x divide-dashed divide-border'>
+          <CarouselContent className='mx-6 py-6'>
             {testimonials.map((item, index) => (
               <CarouselItem
-                className='pl-0 lg:basis-1/2'
+                className='pl-0 pr-4 lg:basis-1/2'
                 key={`${item.title}_${index}`}
               >
-                <div className='flex aspect-video flex-col justify-between p-6 hover:bg-card lg:col-span-2'>
-                  <User className='h-8 w-8 stroke-1 transition-transform hover:rotate-12 hover:scale-125' />
-                  <div className='flex flex-col gap-4'>
-                    <div className='flex flex-col'>
-                      <h3 className='text-xl tracking-tight'>{item.title}</h3>
-                      <p className='max-w-xs text-base text-muted-foreground'>
-                        {item.description}
+                <SpotlightCard
+                  className='testimonial-card flex min-h-[280px] flex-col justify-between rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)] lg:col-span-2'
+                  spotlightColor='rgba(74, 133, 255, 0.2)'
+                >
+                  <div className='relative z-10 flex h-full flex-col justify-between'>
+                    <User className='h-8 w-8 stroke-1 transition-transform hover:rotate-12 hover:scale-125' />
+                    <div className='flex flex-col gap-4'>
+                      <div className='flex flex-col'>
+                        <h3 className='text-xl tracking-tight'>{item.title}</h3>
+                        <p className='max-w-xs text-base text-muted-foreground'>
+                          {item.description}
+                        </p>
+                      </div>
+                      <p className='flex flex-row items-center gap-2 text-sm'>
+                        <span className='text-muted-foreground'>By</span>
+                        <Avatar className='h-6 w-6'>
+                          <AvatarImage src={item.author.image} />
+                          <AvatarFallback>??</AvatarFallback>
+                        </Avatar>
+                        <span>{item.author.name}</span>
                       </p>
                     </div>
-                    <p className='flex flex-row items-center gap-2 text-sm'>
-                      <span className='text-muted-foreground'>By</span>
-                      <Avatar className='h-6 w-6'>
-                        <AvatarImage src={item.author.image} />
-                        <AvatarFallback>??</AvatarFallback>
-                      </Avatar>
-                      <span>{item.author.name}</span>
-                    </p>
                   </div>
-                </div>
+                </SpotlightCard>
               </CarouselItem>
             ))}
           </CarouselContent>

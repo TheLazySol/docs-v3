@@ -338,6 +338,11 @@
     @apply text-muted-foreground hover:text-foreground font-medium px-4 py-3 transition-colors;
   }
 
+  /* Disable spotlight effect in light mode for testimonial cards */
+  html:not(.dark) .testimonial-card > div:first-child {
+    opacity: 0 !important;
+  }
+
   /* TOC Title styling - Enhanced */
   #toc-title {
     @apply text-xs font-bold uppercase tracking-widest text-foreground/60 mb-3 pb-3 border-b border-border/40;

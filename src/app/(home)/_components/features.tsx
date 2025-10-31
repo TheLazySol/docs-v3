@@ -20,7 +20,7 @@ import * as motion from 'motion/react-client';
 
 // Create a variant for feature items
 const featureItemVariants = cva(
-  'group relative overflow-hidden',
+  'group relative overflow-visible',
   {
     variants: {
       size: {
@@ -103,7 +103,7 @@ const Features = () => (
           What is Epicentral <span style={{ color: '#4a85ff' }}>Labs</span>?
         </h2>
         <p className='mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl'>
-          A community-governed DAO bringing decentralized options trading on-chain.
+          A decentralized autonomous organization bringing options trading on-chain.
         </p>
       </motion.div>
 
@@ -127,7 +127,7 @@ const Features = () => (
               })}
             >
               <SpotlightCard
-                className={`h-full rounded-xl border-border/50 bg-card/50 backdrop-blur-sm ${
+                className={`overflow-visible h-full rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)] ${
                   feature.size === 'sm' ? 'p-6' : 'p-8'
                 }`}
                 spotlightColor="rgba(74, 133, 255, 0.6)"
