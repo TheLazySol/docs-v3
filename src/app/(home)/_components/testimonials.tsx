@@ -9,45 +9,68 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel';
 import SpotlightCard from '@/components/ui/spotlight-card';
-import { User } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const testimonials = [
   {
-    title: 'Open-source excellence',
-    description:
-      'The Solana Options Standard SDK is incredibly well-designed and easy to use. Building on it has been a smooth experience.',
+    title: '"Epicentral Labs is where community drives real crypto innovation"',
     author: {
-      name: 'Hayden Bleasel',
-      image: 'https://github.com/haydenbleasel.png',
+      name: '@Ene_anthonyy',
+      image: 'https://pbs.twimg.com/profile_images/1932690606230261760/kBOrnmRa_400x400.jpg',
+      link: 'https://x.com/Ene_anthonyy',
     },
+    date: 'Oct. 7th, 2025',
+    link: 'https://x.com/Ene_anthonyy/status/1975685789666169307',
   },
   {
-    title: 'Great documentation',
-    description:
-      'The documentation is comprehensive and the examples are clear. It made integrating options into our DeFi protocol straightforward.',
+    title: '"The real movement happens in github commits."',
     author: {
-      name: 'Lee Robinson',
-      image: 'https://github.com/leerob.png',
+      name: '@0xbigturk',
+      image: 'https://pbs.twimg.com/profile_images/1975793902419378176/I-SimT_a_400x400.jpg',
+      link: 'https://x.com/0xbigturk',
     },
+    date: 'Jan. 12th, 2025',
+    link: 'https://x.com/0xbigturk/status/1878553907942531174',
   },
   {
-    title: 'Active community',
-    description:
-      'The Discord community is helpful and responsive. The team is always available to answer questions and provide guidance.',
+    title: '"The biggest defi unlock is going to be options trading on Solana."',
     author: {
-      name: 'shadcn',
-      image: 'https://github.com/shadcn.png',
+      name: '@TonyBetW',
+      image: 'https://pbs.twimg.com/profile_images/1828537820085895168/pgoaN6-W_400x400.jpg',
+      link: 'https://x.com/TonyBetW',
     },
+    date: 'Oct. 24th, 2025',
+    link: 'https://x.com/TonyBetW/status/1981847969994277340',
   },
   {
-    title: 'Solid foundation',
-    description:
-      'Epicentral Labs is building the infrastructure that the Solana DeFi ecosystem needs. Their work on standards is invaluable.',
+    title: '"Transitioning to full community-only token governance is a bold move; not many DAOs achieve this in their lifetime."',
     author: {
-      name: 'Pontus Abrahamsson',
-      image: 'https://github.com/pontusab.png',
+      name: '@1xraccoon',
+      image: 'https://pbs.twimg.com/profile_images/1955326522690052096/TVSANLzm_400x400.png',
+      link: 'https://x.com/1xraccoon',
     },
+    date: 'Dec. 8th, 2024',
+    link: 'https://x.com/1xraccoon/status/1865818411642839254',
+  },
+  {
+    title: '"DAO Meta + Building fullstack first mover tech (options trading) on Solana. Stacked team with great network and partnerships."',
+    author: {
+      name: '@cryptojuggler3',
+      image: 'https://pbs.twimg.com/profile_images/1939905803424587776/_QsYRw8L_400x400.jpg',
+      link: 'https://x.com/cryptojuggler3',
+    },
+    date: 'Oct. 5th, 2025',
+    link: 'https://x.com/cryptojuggler3/status/1974689760032539025',
+  },
+  {
+    title: '"$LABS Epicentral Labs is the most undervalued utility I\'ve seen in a while."',
+    author: {
+      name: '@MidTermDev',
+      image: 'https://pbs.twimg.com/profile_images/1975996023647391744/aHktaApr_400x400.jpg',
+      link: 'https://x.com/MidTermDev',
+    },
+    date: 'Oct. 5th, 2025',
+    link: 'https://x.com/MidTermDev/status/1974717448617374183',
   },
 ];
 
@@ -76,10 +99,10 @@ const Testimonials = () => {
       <div className='flex flex-col gap-10'>
         <div className='flex flex-col gap-2 px-6'>
           <h2 className='max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl'>
-            Loved by the community
+            Loved by CT
           </h2>
           <p className='max-w-xl text-left text-lg text-muted-foreground leading-relaxed tracking-tight lg:max-w-lg'>
-            See what the community is saying about Epicentral Labs.
+            See what crypto twitter is saying about Epicentral Labs.
           </p>
         </div>
 
@@ -98,22 +121,48 @@ const Testimonials = () => {
                   spotlightColor='rgba(74, 133, 255, 0.2)'
                 >
                   <div className='relative z-10 flex h-full flex-col justify-between'>
-                    <User className='h-8 w-8 stroke-1 transition-transform hover:rotate-12 hover:scale-125' />
-                    <div className='flex flex-col gap-4'>
-                      <div className='flex flex-col'>
-                        <h3 className='text-xl tracking-tight'>{item.title}</h3>
-                        <p className='max-w-xs text-base text-muted-foreground'>
-                          {item.description}
-                        </p>
+                    <h3 className='text-2xl md:text-3xl tracking-tight flex-shrink-0 mb-6'>{item.title}</h3>
+                    <div className='flex items-end justify-between gap-4 flex-shrink-0'>
+                      <div className='flex flex-col gap-1'>
+                        <div className='flex items-center gap-2 text-sm'>
+                          <span className='text-muted-foreground'>By</span>
+                          <Avatar className='h-6 w-6'>
+                            <AvatarImage src={item.author.image} />
+                            <AvatarFallback>??</AvatarFallback>
+                          </Avatar>
+                          <a
+                            href={item.author.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='hover:text-primary transition-colors underline'
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {item.author.name}
+                          </a>
+                        </div>
+                        <span className='text-xs text-muted-foreground italic ml-1'>
+                          {item.date}
+                        </span>
                       </div>
-                      <p className='flex flex-row items-center gap-2 text-sm'>
-                        <span className='text-muted-foreground'>By</span>
-                        <Avatar className='h-6 w-6'>
-                          <AvatarImage src={item.author.image} />
-                          <AvatarFallback>??</AvatarFallback>
-                        </Avatar>
-                        <span>{item.author.name}</span>
-                      </p>
+                      <a
+                        href={item.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors font-medium'
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        View Post{' '}
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='24'
+                          height='24'
+                          viewBox='0 0 50 50'
+                          className='inline-block'
+                          fill='currentColor'
+                        >
+                          <path d='M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z'></path>
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </SpotlightCard>
