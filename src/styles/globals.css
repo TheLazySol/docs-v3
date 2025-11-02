@@ -353,6 +353,11 @@
     opacity: 0 !important;
   }
 
+  /* Disable spotlight effect in light mode for update cards */
+  html:not(.dark) .update-card > div:first-child {
+    opacity: 0 !important;
+  }
+
   /* TOC Title styling - Enhanced */
   #toc-title {
     @apply text-xs font-bold uppercase tracking-widest text-foreground/60 mb-3 pb-3 border-b border-border/40;
