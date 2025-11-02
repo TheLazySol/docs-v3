@@ -9,24 +9,29 @@ import {
 
 const faq = [
   {
-    question: 'What is Epicentral Labs?',
+    question: 'What are LABS Tokens?',
     answer:
-      'Epicentral Labs is a community-governed DAO that is building the infrastructure for options trading on-chain on Solana. Expanding on the core infrastructure, we are building the next chapter of DeFi, governed by $LABS Token Holders.',
+      '$LABS are the native tokens used for governing the EpicentralDAO. Active participants can stake their $LABS to vote on DAO proposals and earn rewards from the protocol revenue¹.',
   },
   {
-    question: 'What is OPX?',
+    question: 'What are xLABS Tokens?',
     answer:
-      'Our core infrastructure is built on Solana, a high-performance blockchain platform that is secure and scalable. We implement enterprise-grade security measures, including end-to-end encryption, regular security audits, and compliance with industry standards. Your data security is our top priority.',
+      '$xLABS are the redeemable reward tokens that are minted autonomously proportional to the amount of $LABS tokens staked via the "The Staking Lab" ~ our native staking platform for reward distribution and eligibility. ',
   },
   {
-    question: 'Can I join the DAO?',
+    question: 'When will OPX release for Mainnet?',
     answer:
-      'Yes, you can join the DAO by holding $LABS Tokens, and staking them into our EpicentralDAO. You can withdraw at any time! Join our Discord community for support, documentation, and to connect with others in the Epicentral Community.',
+      'OPX is currently available on devnet and will be released for Mainnet either late Q4, 2025 or early Q1, 2026.',
+  },
+  {
+    question: 'How do I join the DAO?',
+    answer:
+      'Joining EpicentralDAO is easy! Simply swap for $LABS and "deposit" them into the DAO through Realms. You can withdraw at any time.',
   },
   {
     question: 'Can I join the Core Team?',
     answer:
-      'we are always welcome to voluntary contributions.  We allocate the contributor role to these members and keep them first in mind for discussions, alpha, and testing - in short: intangible value. Beyond that, we have a few priorities before us that require capital.  I will have to reluctantly agree that we do not have a budget to onboard new members at this time.',
+      'We welcome new voluntary contributions.  We allocate the contributor role to these members and keep them first in mind for discussions, alpha, and testing - in short: intangible value. Beyond that, we have a few priorities before us that require capital.  I will have to reluctantly agree that we do not have a budget to onboard new members at this time.',
   },
 ];
 
