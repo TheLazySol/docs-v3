@@ -7,7 +7,7 @@ const ThemedBackground = () => {
     <Threads
       color={[0.29, 0.52, 1.0]}
       amplitude={1.2}
-      distance={0.45}
+      distance={0.35}
       enableMouseInteraction={true}
     />
   );
