@@ -1,4 +1,4 @@
-import Beams from '@/components/Beams';
+import ThemedBackground from '@/components/ThemedBackground';
 import { Icons } from '@/components/icons/icons';
 import { Section } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
@@ -23,16 +23,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
       viewport={{ once: true }}
       className='-z-10 absolute inset-0 h-full w-full'
     >
-      <Beams
-        beamWidth={2}
-        beamHeight={18}
-        beamNumber={8}
-        lightColor='#4a85ff'
-        speed={2}
-        noiseIntensity={1.75}
-        scale={0.2}
-        rotation={35}
-      />
+      <ThemedBackground />
       {/* Gradient overlay for better text contrast */}
     </motion.div>
 
@@ -45,7 +36,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
       >
         <Badge
           variant='secondary'
-          className='group gap-2 border-primary/20 bg-gradient-to-r from-primary/10 to-primary/5 text-white transition-all duration-300 hover:border-primary/30'
+          className='group gap-2 border-primary/20 bg-gradient-to-r from-primary/10 to-primary/5 text-foreground transition-all duration-300 hover:border-primary/30'
           asChild
         >
           <Link
@@ -66,15 +57,15 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         transition={{ delay: 0.2, duration: 0.6 }}
         className='flex flex-col gap-6 text-center'
       >
-        <h1 className='max-w-4xl text-center font-bold font-sans text-5xl text-white tracking-tight md:text-7xl lg:text-8xl'>
+        <h1 className='max-w-4xl text-center font-bold font-sans text-5xl text-foreground tracking-tight md:text-7xl lg:text-8xl'>
           Pioneering DeFi
           <br />
-          <span className='text-white'>Options on Solana</span>
+          <span className='text-foreground'>Options on Solana</span>
         </h1>
-        <p className='max-w-3xl text-center font-sans text-lg text-white/90 leading-relaxed tracking-tight md:text-xl lg:text-2xl'>
+        <p className='max-w-3xl text-center font-sans text-lg text-foreground/90 leading-relaxed tracking-tight md:text-xl lg:text-2xl'>
           Building the infrastructure for on-chain options trading
           <br />
-          <span className='mt-2 block text-sm text-white/70'>
+          <span className='mt-2 block text-sm text-foreground/70'>
             The next chapter of decentralized finance.
           </span>
         </p>
