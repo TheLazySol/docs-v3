@@ -101,10 +101,10 @@ export function Footer() {
 
           <ul className='flex flex-col gap-3'>
             <li>
-              <ActiveLink href={'/privacy'}>Privacy Policy</ActiveLink>
+              <ActiveLink href={'/operating-agreement'}>Operating Agreement</ActiveLink>
             </li>
             <li>
-              <ActiveLink href={'/terms'}>Terms of Service</ActiveLink>
+              <ActiveLink href={'/tos-and-privacy'}>Terms of Service & Privacy Policy</ActiveLink>
             </li>
           </ul>
         </div>

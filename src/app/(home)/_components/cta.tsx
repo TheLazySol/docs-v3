@@ -1,15 +1,58 @@
+'use client';
+
 import { Icons } from '@/components/icons/icons';
 import { Section } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { env } from '@/env';
-import { ArrowRight, Landmark, Rocket, Star, Users, Zap } from 'lucide-react';
+import SpotlightCard from '@/components/ui/spotlight-card';
+import { ArrowRight, BookOpen, Github, HandCoins, Landmark, Users, Coins, PiggyBank } from 'lucide-react';
 import * as motion from 'motion/react-client';
 import Link from 'next/link';
-import type React from 'react';
+import { useEffect, useState } from 'react';
+
+function formatHolderCount(count: number | null): string {
+  if (count === null || count === undefined) {
+    return 'Loading...';
+  }
+  
+  if (count >= 1000000) {
+    return `${(count / 1000000).toFixed(1)}M+`;
+  } else if (count >= 1000) {
+    return `${(count / 1000).toFixed(1)}K+`;
+  }
+  
+  return `${count.toLocaleString()}+`;
+}
 
 export default function CTA(): React.ReactElement {
+  const [holderCount, setHolderCount] = useState<number | null>(null);
+
+  const fetchHolderCount = async () => {
+    try {
+      const response = await fetch('/api/token/overview');
+      const data = await response.json();
+      
+      if (data.success && data.holder !== null && data.holder !== undefined) {
+        setHolderCount(data.holder);
+      }
+    } catch (error) {
+      console.error('Error fetching holder count:', error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch immediately on mount
+    fetchHolderCount();
+
+    // Set up interval to fetch every 5 minutes (300000 ms)
+    const interval = setInterval(() => {
+      fetchHolderCount();
+    }, 300000);
+
+    // Cleanup interval on unmount
+    return () => clearInterval(interval);
+  }, []);
   return (
     <Section className='relative overflow-hidden px-4 py-20 sm:px-16 sm:py-28 md:py-36'>
       {/* Background Gradient */}
@@ -34,7 +77,7 @@ export default function CTA(): React.ReactElement {
               rel="noopener noreferrer"
               className="flex items-center no-underline"
             >
-              <Landmark className='mr-2 h-3 w-4' />
+              <Coins className='mr-2 h-3 w-4' />
               Join Epicentral DAO
               <ArrowRight className='ml-2 h-3 w-3' />
             </Link>
@@ -55,49 +98,79 @@ export default function CTA(): React.ReactElement {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className='relative overflow-visible border-primary/20 bg-gradient-to-br from-primary/5 to-background transition-all duration-300 hover:from-primary/10 hover:to-background shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
-              <CardContent className='p-8'>
-                <div className='mb-6 flex items-start gap-4'>
-                  <div className='rounded-lg border border-primary/20 bg-primary/10 p-3'>
-                    <Zap className='h-6 w-6 text-primary' />
-                  </div>
-                  <div>
-                    <h3 className='mb-2 font-bold text-2xl'>
-                      Start Trading Today
-                    </h3>
-                    <p className='text-muted-foreground'>
-                      Get instant access to our platform and start trading
-                      options on Solana.
-                    </p>
-                  </div>
-                </div>
-
-                <div className='space-y-4'>
-                  <Button
-                    size='lg'
-                    className='group w-full gap-3 bg-gradient-to-r from-primary to-primary/90 shadow-lg transition-all duration-300 hover:from-primary/90 hover:to-primary hover:shadow-xl'
-                    asChild
-                  >
-                    <Link href={env.NEXT_PUBLIC_APP_URL || '/contact'}>
-                      <Rocket className='h-4 w-4' />
-                      Get started for free
-                      <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
-                    </Link>
-                  </Button>
-
-                  <div className='flex items-center justify-center gap-6 text-muted-foreground text-sm'>
-                    <div className='flex items-center gap-2'>
-                      <Star className='h-4 w-4 text-yellow-500' />
-                      <span>4.9/5 Rating</span>
+            <SpotlightCard
+              className='overflow-visible'
+              spotlightColor='rgba(74, 133, 255, 0.6)'
+            >
+              <Card className='relative overflow-visible border-primary/20 bg-gradient-to-br from-primary/5 to-background transition-all duration-300 hover:from-primary/10 hover:to-background shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
+                <CardContent className='p-8'>
+                  <div className='relative z-10'>
+                    <div className='mb-6 flex items-start gap-4'>
+                      <div className='rounded-lg border border-primary/20 bg-primary/10 p-3'>
+                        <Landmark className='h-6 w-6 text-primary' />
+                      </div>
+                      <div>
+                        <h3 className='mb-2 font-bold text-2xl'>
+                          Epicentral<strong>DAO</strong>
+                        </h3>
+                        <p className='text-muted-foreground'>
+                          Swap for $LABS Tokens and vote on DAO proposals and stake for protocol rewards. 
+                        </p>
+                      </div>
                     </div>
-                    <div className='flex items-center gap-2'>
-                      <Users className='h-4 w-4 text-blue-500' />
-                      <span>10K+ Users</span>
+
+                    <div className='space-y-4'>
+                      <Button
+                        size='lg'
+                        className='group w-full gap-3 bg-gradient-to-r from-primary to-primary/90 shadow-lg transition-all duration-300 hover:from-primary/90 hover:to-primary hover:shadow-xl'
+                        asChild
+                      >
+                        <Link href='https://cabana.exchange/token/LABSh5DTebUcUbEoLzXKCiXFJLecDFiDWiBGUU1GpxR?partner=Epicentral' target='_blank' rel='noopener noreferrer'>
+                          <HandCoins className='h-4 w-4' />
+                            Get $LABS Tokens
+                          <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                        </Link>
+                      </Button>
+
+                      <div className='flex items-center justify-center gap-6 text-muted-foreground text-sm'>
+                        <div className='flex items-center gap-2'>
+                          <Users className='h-4 w-4 text-blue-500' />
+                          <span>{formatHolderCount(holderCount)} Holders</span>
+                        </div>
+                      </div>
+
+                      <div className='flex gap-4'>
+                        <Button
+                          size='lg'
+                          variant='outline'
+                          className='group flex-1 gap-3 bg-primary/30 border-primary/40 text-foreground shadow-md transition-all duration-300 hover:bg-primary/50 hover:border-primary/60 hover:shadow-lg dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-600 dark:hover:border-gray-600'
+                          asChild
+                        >
+                          <Link href='https://v2.realms.today/dao/5PP7vKjJyLw1MR55LoexRsCj3CpZj9MdD6aNXRrvxG42/proposals' target='_blank' rel='noopener noreferrer'>
+                            <Landmark className='h-4 w-4' />
+                            Stake for Governance
+                            <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                          </Link>
+                        </Button>
+
+                        <Button
+                          size='lg'
+                          variant='outline'
+                          className='group flex-1 gap-3 bg-primary/30 border-primary/40 text-foreground shadow-md transition-all duration-300 hover:bg-primary/50 hover:border-primary/60 hover:shadow-lg dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-600 dark:hover:border-gray-600'
+                          asChild
+                        >
+                          <Link href='#'>
+                          <PiggyBank className='h-4 w-4' />
+                            Stake for Rewards
+                            <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </SpotlightCard>
           </motion.div>
 
           {/* Secondary Actions */}
@@ -108,72 +181,87 @@ export default function CTA(): React.ReactElement {
             viewport={{ once: true }}
             className='space-y-4'
           >
-            <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
-              <CardContent className='p-6'>
-                <div className='flex items-center gap-4'>
-                  <div className='rounded-lg border border-blue-500/20 bg-blue-500/10 p-2'>
-                    <Icons.discord className='h-5 w-5 text-blue-500' />
+            <SpotlightCard
+              className='overflow-visible'
+              spotlightColor='rgba(74, 133, 255, 0.6)'
+            >
+              <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
+                <CardContent className='p-6'>
+                  <div className='relative z-10 flex items-center gap-4'>
+                    <div className='rounded-lg border border-blue-500/20 bg-blue-500/10 p-2'>
+                      <Icons.discord className='h-5 w-5 text-blue-500' />
+                    </div>
+                    <div className='flex-1'>
+                      <h4 className='mb-1 font-semibold'>Join Our Community</h4>
+                      <p className='text-muted-foreground text-sm'>
+                        Connect with developers and traders
+                      </p>
+                    </div>
+                    <Button variant='outline' size='sm' asChild>
+                      <Link href='/contact'>
+                        Join <ArrowRight className='ml-1 h-3 w-3' />
+                      </Link>
+                    </Button>
                   </div>
-                  <div className='flex-1'>
-                    <h4 className='mb-1 font-semibold'>Join Our Community</h4>
-                    <p className='text-muted-foreground text-sm'>
-                      Connect with developers and traders
-                    </p>
-                  </div>
-                  <Button variant='outline' size='sm' asChild>
-                    <Link href='/contact'>
-                      Join <ArrowRight className='ml-1 h-3 w-3' />
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </SpotlightCard>
 
-            <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
-              <CardContent className='p-6'>
-                <div className='flex items-center gap-4'>
-                  <div className='rounded-lg border border-green-500/20 bg-green-500/10 p-2'>
-                    <Icons.arrowUpRight className='h-5 w-5 text-green-500' />
+            <SpotlightCard
+              className='overflow-visible'
+              spotlightColor='rgba(74, 133, 255, 0.6)'
+            >
+              <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
+                <CardContent className='p-6'>
+                  <div className='relative z-10 flex items-center gap-4'>
+                    <div className='rounded-lg border border-[#4AFFBA]/20 bg-[#4AFFBA]/10 p-2'>
+                      <BookOpen className='h-5 w-5 text-[#4AFFBA]' />
+                    </div>
+                    <div className='flex-1'>
+                      <h4 className='mb-1 font-semibold'>View Documentation</h4>
+                      <p className='text-muted-foreground text-sm'>
+                        Learn how to integrate our SDK
+                      </p>
+                    </div>
+                    <Button variant='outline' size='sm' asChild>
+                      <Link href='/docs'>
+                        Learn <ArrowRight className='ml-1 h-3 w-3' />
+                      </Link>
+                    </Button>
                   </div>
-                  <div className='flex-1'>
-                    <h4 className='mb-1 font-semibold'>View Documentation</h4>
-                    <p className='text-muted-foreground text-sm'>
-                      Learn how to integrate our SDK
-                    </p>
-                  </div>
-                  <Button variant='outline' size='sm' asChild>
-                    <Link href='/docs'>
-                      Learn <ArrowRight className='ml-1 h-3 w-3' />
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </SpotlightCard>
 
-            <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
-              <CardContent className='p-6'>
-                <div className='flex items-center gap-4'>
-                  <div className='rounded-lg border border-purple-500/20 bg-purple-500/10 p-2'>
-                    <Star className='h-5 w-5 text-purple-500' />
+            <SpotlightCard
+              className='overflow-visible'
+              spotlightColor='rgba(74, 133, 255, 0.6)'
+            >
+              <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
+                <CardContent className='p-6'>
+                  <div className='relative z-10 flex items-center gap-4'>
+                    <div className='rounded-lg border border-[#8D4AFF]/20 bg-[#8D4AFF]/10 p-2'>
+                      <Github className='h-5 w-5 text-[#8D4AFF]' />
+                    </div>
+                    <div className='flex-1'>
+                      <h4 className='mb-1 font-semibold'>GitHub Repository</h4>
+                      <p className='text-muted-foreground text-sm'>
+                        Explore our open-source code
+                      </p>
+                    </div>
+                    <Button variant='outline' size='sm' asChild>
+                      <Link
+                        href='https://github.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        View <ArrowRight className='ml-1 h-3 w-3' />
+                      </Link>
+                    </Button>
                   </div>
-                  <div className='flex-1'>
-                    <h4 className='mb-1 font-semibold'>GitHub Repository</h4>
-                    <p className='text-muted-foreground text-sm'>
-                      Explore our open-source code
-                    </p>
-                  </div>
-                  <Button variant='outline' size='sm' asChild>
-                    <Link
-                      href='https://github.com'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      View <ArrowRight className='ml-1 h-3 w-3' />
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </SpotlightCard>
           </motion.div>
         </div>
       </div>
