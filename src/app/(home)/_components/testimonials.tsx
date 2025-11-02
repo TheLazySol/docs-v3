@@ -72,6 +72,16 @@ const testimonials = [
     date: 'Oct. 5th, 2025',
     link: 'https://x.com/MidTermDev/status/1974717448617374183',
   },
+  {
+    title: '"No memes here. Real builders. Real utility."',
+    author: {
+      name: '@OG_Chapo_',
+      image: 'https://pbs.twimg.com/profile_images/1946968353450426369/Uh_h0WCC_400x400.jpg',
+      link: 'https://x.com/OG_Chapo_',
+    },
+    date: 'Jul 9th, 2025',
+    link: 'https://x.com/OG_Chapo_/status/1943029471382245585',
+  },
 ];
 
 const Testimonials = () => {
