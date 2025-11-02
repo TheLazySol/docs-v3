@@ -131,7 +131,7 @@ const Testimonials = () => {
                   spotlightColor='rgba(74, 133, 255, 0.2)'
                 >
                   <div className='relative z-10 flex h-full flex-col justify-between'>
-                    <h3 className='text-2xl md:text-3xl tracking-tight flex-shrink-0 mb-6'>{item.title}</h3>
+                    <h3 className='text-2xl md:text-3xl tracking-tight flex-shrink-0 mb-6 italic'>{item.title}</h3>
                     <div className='flex items-end justify-between gap-4 flex-shrink-0'>
                       <div className='flex flex-col gap-1'>
                         <div className='flex items-center gap-2 text-sm'>
