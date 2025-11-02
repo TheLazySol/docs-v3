@@ -55,9 +55,6 @@ export default function CTA(): React.ReactElement {
   }, []);
   return (
     <Section className='relative overflow-hidden px-4 py-20 sm:px-16 sm:py-28 md:py-36'>
-      {/* Background Gradient */}
-      <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/5' />
-
       <div className='relative z-10 mx-auto max-w-6xl'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
