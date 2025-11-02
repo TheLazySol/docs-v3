@@ -136,7 +136,7 @@ export default function CTA(): React.ReactElement {
                         </div>
                       </div>
 
-                      <div className='flex gap-4'>
+                      <div className='flex flex-col gap-4 md:flex-row'>
                         <Button
                           size='lg'
                           variant='outline'
