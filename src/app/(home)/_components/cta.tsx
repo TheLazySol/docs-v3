@@ -208,7 +208,7 @@ export default function CTA(): React.ReactElement {
               className='overflow-visible'
               spotlightColor='rgba(74, 133, 255, 0.6)'
             >
-              <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
+              <Card className='overflow-visible border border-border/50 bg-card/60 transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)] dark:bg-card/70'>
                 <CardContent className='p-6'>
                   <div className='relative z-10 flex items-center gap-4'>
                     <div className='rounded-lg border border-[#4a85ff]/20 bg-[#4a85ff]/10 p-2'>
@@ -234,7 +234,7 @@ export default function CTA(): React.ReactElement {
               className='overflow-visible'
               spotlightColor='rgba(74, 133, 255, 0.6)'
             >
-              <Card className='overflow-visible border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)]'>
+              <Card className='overflow-visible border border-border/50 bg-card/60 transition-all duration-300 hover:bg-card/80 hover:border-primary/30 shadow-[0_12px_15px_-4px_rgba(74,133,255,0.11)] hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.15)] dark:shadow-[0_12px_15px_-4px_rgba(74,133,255,0.25)] dark:hover:shadow-[0_15px_20px_-6px_rgba(74,133,255,0.5)] dark:bg-card/70'>
                 <CardContent className='p-6'>
                   <div className='relative z-10 flex items-center gap-4'>
                     <div className='rounded-lg border border-[#4a85ff]/20 bg-[#4a85ff]/10 p-2'>

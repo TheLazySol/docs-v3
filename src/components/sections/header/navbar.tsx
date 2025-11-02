@@ -18,8 +18,9 @@ export const Navbar = (props: HTMLAttributes<HTMLElement>) => {
         id='nd-nav'
         {...props}
         className={cn(
-          'sticky top-[var(--fd-banner-height)] z-30 box-content w-full bg-fd-background/80 backdrop-blur-lg transition-colors',
-          'border-border border-b border-dashed',
+          'sticky top-[var(--fd-banner-height)] z-30 box-content w-full bg-background/40 dark:bg-background/30 backdrop-blur-xl transition-colors',
+          'border-border/50 border-b border-dashed',
+          'supports-[backdrop-filter]:bg-background/30 supports-[backdrop-filter]:dark:bg-background/20',
           // value.length > 0 ? 'shadow-lg' : 'shadow-xs',
           props.className,
         )}

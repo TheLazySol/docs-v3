@@ -70,7 +70,7 @@ export default function Home() {
         target="page"
         position="bottom"
         height="10rem"
-        strength={3.5}
+        strength={2.5}
         divCount={4}
         curve="bezier"
         exponential={true}

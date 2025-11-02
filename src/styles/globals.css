@@ -136,12 +136,22 @@
     background-color: transparent;
   }
 
-  /* Navigation dark mode styling */
-  .dark #nd-nav {
-    background-color: #010101 !important;
+  /* Navigation glassmorphism - light mode */
+  #nd-nav {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
   }
 
-  .dark header {
+  /* Navigation glassmorphism - dark mode */
+  .dark #nd-nav {
+    background-color: rgba(1, 1, 1, 0.70) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  /* Footer dark mode styling - ensure #010101 background */
+  .dark #footer-wrapper {
     background-color: #010101 !important;
   }
 

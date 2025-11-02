@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <div className='relative z-10 flex flex-1 flex-col'>{children}</div>
 
         {/* Enhanced footer with better theme integration */}
-        <div className='relative z-10 border-border/50 border-t bg-background/80 backdrop-blur-sm'>
+        <div id='footer-wrapper' className='relative z-10 border-border/50 border-t bg-background/80 backdrop-blur-sm'>
           <Footer />
         </div>
       </main>

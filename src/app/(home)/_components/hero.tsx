@@ -1,4 +1,5 @@
 import ThemedBackground from '@/components/ThemedBackground';
+import BlurText from '@/components/BlurText';
 import { Icons } from '@/components/icons/icons';
 import { Section } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
@@ -57,11 +58,13 @@ const Hero = ({ posts }: { posts: Page[] }) => (
         transition={{ delay: 0.2, duration: 0.6 }}
         className='flex flex-col gap-6 text-center'
       >
-        <h1 className='max-w-4xl text-center font-bold font-sans text-5xl text-foreground tracking-tight md:text-7xl lg:text-8xl'>
-          Pioneering DeFi
-          <br />
-          <span className='text-foreground'>Options on Solana</span>
-        </h1>
+        <BlurText
+          text="Pioneering DeFi Options on Solana"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="max-w-4xl mx-auto justify-center items-center font-bold font-sans text-5xl text-foreground tracking-tight md:text-7xl lg:text-8xl"
+        />
         <p className='max-w-3xl text-center font-sans text-lg text-foreground/90 leading-relaxed tracking-tight md:text-xl lg:text-2xl [text-shadow:0_2px_12px_rgba(255,255,255,0.5),0_4px_20px_rgba(255,255,255,0.3)] dark:[text-shadow:0_2px_12px_rgba(0,0,0,0.8),0_4px_20px_rgba(0,0,0,0.6)]'>
           Building the infrastructure for on-chain options trading
           <br />
