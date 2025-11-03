@@ -12,6 +12,10 @@ const Team = () => {
           <p className='text-lg text-muted-foreground leading-relaxed tracking-tight'>
             the operations behind the DAO.
           </p>
+          <br />
+          <p className='text-lg text-muted-foreground leading-relaxed tracking-tight'>
+            [FILL IN]
+          </p>
         </div>
 
         <div className='flexitems-center relative justify-center border-t border-dashed'>
