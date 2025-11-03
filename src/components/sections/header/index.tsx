@@ -144,7 +144,7 @@ const NavbarLinkItem = ({
 
     return (
       <NavbarMenu>
-        <NavbarMenuTrigger {...props}>
+        <NavbarMenuTrigger {...props} suppressHydrationWarning>
           {item.url ? <Link href={item.url}>{item.text}</Link> : item.text}
         </NavbarMenuTrigger>
         <NavbarMenuContent className='container border-border border-dashed sm:border-x'>

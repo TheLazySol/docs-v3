@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       }}
       className='min-h-screen bg-gradient-to-br from-background via-background to-background/95 pt-0 dark:bg-[#050505]'
     >
-      <main className='relative flex flex-1 flex-col'>
+      <main className='relative flex flex-1 flex-col' suppressHydrationWarning>
         {/* Enhanced background with subtle patterns */}
         <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent' />
         <div className='pointer-events-none absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,_var(--tw-gradient-stops))] from-transparent via-primary/5 to-transparent opacity-30' />

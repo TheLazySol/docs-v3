@@ -86,6 +86,7 @@ export const MenuTrigger = ({
   return (
     <NavigationMenuTrigger
       {...props}
+      suppressHydrationWarning
       className={cn(
         buttonVariants({
           size: 'icon',
