@@ -26,7 +26,8 @@ const buildKeyframes = (
 
   const keyframes: Record<string, Array<string | number>> = {};
   keys.forEach(k => {
-    keyframes[k] = [from[k], ...steps.map(s => s[k])];
+    const fromValue: string | number = from[k] ?? (steps.find(s => s[k] !== undefined)?.[k] ?? 0);
+    keyframes[k] = [fromValue, ...steps.map(s => (s[k] ?? fromValue) as string | number)];
   });
   return keyframes;
 };
@@ -52,8 +53,9 @@ const BlurText: React.FC<BlurTextProps> = ({
   useEffect(() => {
     if (!ref.current) return;
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries) => {
+        const entry = entries[0];
+        if (entry?.isIntersecting) {
           setInView(true);
           observer.unobserve(ref.current as Element);
         }

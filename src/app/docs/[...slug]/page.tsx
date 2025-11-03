@@ -13,9 +13,11 @@ export default async function DocsSlugPage({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  return getDocs().map((page) => ({
-    slug: page.slugs,
-  }));
+  return getDocs()
+    .filter((page) => page.slugs.length > 0)
+    .map((page) => ({
+      slug: page.slugs,
+    }));
 }
 
 export async function generateMetadata({
