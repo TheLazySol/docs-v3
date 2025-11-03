@@ -7,10 +7,10 @@ const Team = () => {
       <div className='flex flex-col gap-10'>
         <div className='flex flex-col gap-2 px-6'>
           <h2 className='font-regular text-3xl tracking-tighter md:text-5xl'>
-            The Core Team
+            LABS Token Holders
           </h2>
           <p className='text-lg text-muted-foreground leading-relaxed tracking-tight'>
-            The operational team behind Epicentral Labs.
+            The authoritative power behind the DAO.
           </p>
         </div>
 

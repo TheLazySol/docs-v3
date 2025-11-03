@@ -16,8 +16,8 @@ export const baseOptions: BaseLayoutProps = {
 export const linkItems: LinkItemType[] = [
   {
     icon: <Icons.info />,
-    text: 'About',
-    url: '/about',
+    text: 'DAO',
+    url: '/dao',
     active: 'url',
   },
   {
@@ -76,7 +76,7 @@ export const linkItems: LinkItemType[] = [
 export const docsLinkItems: LinkItemType[] = [
   {
     icon: <Icons.info />,
-    text: 'About',
+    text: 'DAO',
     url: '/about',
     active: 'url',
   },

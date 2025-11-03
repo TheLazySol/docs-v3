@@ -1,9 +1,10 @@
 import Separator from '@/components/separator';
 import { getSortedByDatePosts } from '@/lib/source';
 import CTA from '../_components/cta';
-import About from './_components/our-story';
+import About from './_components/how-it-works';
+import CoreTeam from './_components/core-team';
 import Hero from './_components/hero';
-import Team from './_components/team';
+import Team from './_components/token-holders';
 import Updates from './_components/updates';
 import GradualBlur from '@/components/GradualBlur';
 
@@ -17,6 +18,8 @@ export default function AboutPage() {
       <About />
       <Separator />
       <Team />
+      <Separator />
+      <CoreTeam />
       <Separator />
       <Updates posts={posts} />
       <CTA />
