@@ -1,6 +1,7 @@
 'use client';
 
-import React, { CSSProperties, useEffect, useRef, useState, useMemo, PropsWithChildren } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
+import type { CSSProperties, PropsWithChildren } from 'react';
 import * as math from 'mathjs';
 
 type GradualBlurProps = PropsWithChildren<{
@@ -163,7 +164,10 @@ const useIntersectionObserver = (ref: React.RefObject<HTMLDivElement>, shouldObs
   useEffect(() => {
     if (!shouldObserve || !ref.current || typeof window === 'undefined') return;
 
-    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 });
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry) setIsVisible(entry.isIntersecting);
+    }, { threshold: 0.1 });
 
     observer.observe(ref.current);
     return () => observer.disconnect();
@@ -182,8 +186,14 @@ const GradualBlur: React.FC<GradualBlurProps> = props => {
   }, []);
 
   const config = useMemo(() => {
-    const presetConfig = props.preset && PRESETS[props.preset] ? PRESETS[props.preset] : {};
-    return mergeConfigs(DEFAULT_CONFIG, presetConfig, props) as Required<GradualBlurProps>;
+    let presetConfig: Partial<GradualBlurProps> = {};
+    if (props.preset && props.preset in PRESETS) {
+      const preset = PRESETS[props.preset];
+      if (preset) {
+        presetConfig = preset;
+      }
+    }
+    return mergeConfigs(DEFAULT_CONFIG, presetConfig, props as Partial<GradualBlurProps>) as Required<GradualBlurProps>;
   }, [props]);
 
   const responsiveHeight = useResponsiveDimension(config.responsive, config, 'height');
@@ -210,7 +220,7 @@ const GradualBlur: React.FC<GradualBlurProps> = props => {
     const currentStrength =
       isHovered && config.hoverIntensity ? config.strength * config.hoverIntensity : config.strength;
 
-    const curveFunc = CURVE_FUNCTIONS[config.curve] || CURVE_FUNCTIONS.linear;
+    const curveFunc: (p: number) => number = CURVE_FUNCTIONS[config.curve] ?? (CURVE_FUNCTIONS.linear ?? ((p: number) => p));
 
     for (let i = 1; i <= config.divCount; i++) {
       let progress = i / config.divCount;

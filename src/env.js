@@ -39,12 +39,7 @@ export const env = createEnv({
    */
   experimental__runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
-  },
-  runtimeEnv: {
-    NODE_ENV: process.env.NODE_ENV,
-    NEXT_BIRDEYE_API_KEY: process.env.NEXT_BIRDEYE_API_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

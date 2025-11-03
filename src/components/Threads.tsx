@@ -135,7 +135,7 @@ const Threads: React.FC<ThreadsProps> = ({
   ...rest
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -176,17 +176,17 @@ const Threads: React.FC<ThreadsProps> = ({
     window.addEventListener('resize', resize);
     resize();
 
-    let currentMouse = [0.5, 0.5];
-    let targetMouse = [0.5, 0.5];
+    let currentMouse: [number, number] = [0.5, 0.5];
+    let targetMouse: [number, number] = [0.5, 0.5];
 
     function handleMouseMove(e: MouseEvent) {
       const rect = container.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = 1.0 - (e.clientY - rect.top) / rect.height;
-      targetMouse = [x, y];
+      targetMouse = [x, y] as [number, number];
     }
     function handleMouseLeave() {
-      targetMouse = [0.5, 0.5];
+      targetMouse = [0.5, 0.5] as [number, number];
     }
     if (enableMouseInteraction) {
       container.addEventListener('mousemove', handleMouseMove);

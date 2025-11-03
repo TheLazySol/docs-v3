@@ -7,7 +7,7 @@ import { baseOptions, docsLinkItems } from '../layout.config';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className='flex min-h-screen flex-col'>
+    <div className='flex min-h-screen flex-col' suppressHydrationWarning>
       <DocsLayout
         tree={docsPageTree}
         {...baseOptions}
