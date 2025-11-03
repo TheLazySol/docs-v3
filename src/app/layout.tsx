@@ -4,6 +4,7 @@ import { Geist_Mono, Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import '@/styles/globals.css';
 import 'katex/dist/katex.css';
+import 'fumadocs-twoslash/twoslash.css';
 import { baseUrl } from '@/lib/constants';
 import { Body } from './layout.client';
 import { description as homeDescription } from './layout.config';
