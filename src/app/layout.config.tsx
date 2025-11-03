@@ -28,7 +28,7 @@ export const linkItems: LinkItemType[] = [
   },
   {
     type: 'menu',
-    text: 'Blog',
+    text: 'Blogs',
     icon: <Icons.posts />,
     on: 'all',
     items: [
@@ -88,7 +88,7 @@ export const docsLinkItems: LinkItemType[] = [
   },
   {
     type: 'menu',
-    text: 'Blog',
+    text: 'Blogs',
     icon: <Icons.posts />,
     on: 'all',
     items: [

@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { ProgressProvider } from '@bprogress/next/app';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { RootProvider } from 'fumadocs-ui/provider';
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { unstable_ViewTransition as ViewTransition } from 'react';
 
 export function Provider({
@@ -15,7 +15,13 @@ export function Provider({
 }: {
   children: ReactNode;
 }): React.ReactElement {
-  return (
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const content = (
     <ThemeProvider
       attribute='class'
       defaultTheme='system'
@@ -39,7 +45,11 @@ export function Provider({
           shallowRouting
         >
           <TooltipProvider>
-            <ViewTransition>{children}</ViewTransition>
+            {mounted ? (
+              <ViewTransition>{children}</ViewTransition>
+            ) : (
+              children
+            )}
           </TooltipProvider>
         </ProgressProvider>
         <Toaster />
@@ -47,4 +57,6 @@ export function Provider({
       </RootProvider>
     </ThemeProvider>
   );
+
+  return content;
 }
