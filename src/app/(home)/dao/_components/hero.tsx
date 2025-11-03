@@ -1,6 +1,7 @@
 'use client';
 
 import { Section } from '@/components/section';
+import BlurText from '@/components/BlurText';
 import Balancer from 'react-wrap-balancer';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -67,11 +68,13 @@ const Hero = () => {
               Epicentral<strong>DAO</strong>
             </Balancer>
           </h1>
-          <p className='mx-auto max-w-2xl text-lg text-gray-900 md:text-xl dark:text-muted-foreground/90'>
-            <Balancer>
-              Innovating the options market on Solana, one vote at a time.
-            </Balancer>
-          </p>
+          <BlurText
+            text="Innovating the options market on Solana, one vote at a time."
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="mx-auto max-w-2xl text-lg text-gray-900 md:text-xl dark:text-muted-foreground/90"
+          />
           <div className='flex items-center gap-2 text-sm text-gray-600 md:text-base dark:text-muted-foreground/90'>
             <div className='relative h-12 w-auto md:h-16'>
               <Image

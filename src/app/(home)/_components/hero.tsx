@@ -65,7 +65,7 @@ const Hero = ({ posts }: { posts: Page[] }) => (
           direction="top"
           className="max-w-4xl mx-auto justify-center items-center font-bold font-sans text-5xl text-foreground tracking-tight md:text-7xl lg:text-8xl"
         />
-        <p className='max-w-3xl text-center font-sans text-lg text-foreground/90 leading-relaxed tracking-tight md:text-xl lg:text-2xl [text-shadow:0_2px_12px_rgba(255,255,255,0.5),0_4px_20px_rgba(255,255,255,0.3)] dark:[text-shadow:0_2px_12px_rgba(0,0,0,0.8),0_4px_20px_rgba(0,0,0,0.6)]'>
+        <p className='max-w-3xl mx-auto text-center font-sans text-lg text-foreground/90 leading-relaxed tracking-tight md:text-xl lg:text-2xl [text-shadow:0_2px_12px_rgba(255,255,255,0.5),0_4px_20px_rgba(255,255,255,0.3)] dark:[text-shadow:0_2px_12px_rgba(0,0,0,0.8),0_4px_20px_rgba(0,0,0,0.6)]'>
           Building the infrastructure for on-chain options trading
           <br />
           <span className='mt-2 block text-sm text-foreground/80 [text-shadow:0_1px_8px_rgba(255,255,255,0.4),0_2px_12px_rgba(255,255,255,0.2)] dark:[text-shadow:0_1px_8px_rgba(0,0,0,0.9),0_2px_12px_rgba(0,0,0,0.5)]'>
